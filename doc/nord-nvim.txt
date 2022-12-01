@@ -88,13 +88,13 @@ Enable the colorscheme:
 
 >
     " Vim Script
-    colorscheme tokyonight
+    colorscheme nord
 <
 
 
 >
     -- Lua
-    vim.cmd[[colorscheme tokyonight]]
+    vim.cmd[[colorscheme nord]]
 <
 
 
