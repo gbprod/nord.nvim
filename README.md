@@ -1,10 +1,10 @@
-# gbprod/nord.nvim
+# 🖌️ nord.nvim
 
 Neovim theme using the [Nord palette](https://www.nordtheme.com/) that tries to
 be as close as possible to the [official vim theme](https://github.com/arcticicestudio/nord-vim/)
 and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-studio-code).
 
-**This colorscheme still under developement, please keep calm and report issues**
+**This colorscheme still under developement, please, keep calm and report issues**
 
 > "Arctic, north-bluish clean and elegant" - arcticicestudio
 
