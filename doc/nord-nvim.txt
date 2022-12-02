@@ -3,7 +3,7 @@
 ==============================================================================
 Table of Contents                                *nord-nvim-table-of-contents*
 
-1. gbprod/nord.nvim                               |nord-nvim-gbprod/nord.nvim|
+1. 🖌️ nord.nvim                             |nord-nvim-🖌️-nord.nvim|
   - ✨ Features                                      |nord-nvim-✨-features|
   - ⚡️ Requirements                        |nord-nvim-⚡️-requirements|
   - 📦 Installation                            |nord-nvim-📦-installation|
@@ -12,14 +12,14 @@ Table of Contents                                *nord-nvim-table-of-contents*
   - 🎉 Credits                                      |nord-nvim-🎉-credits|
 
 ==============================================================================
-1. gbprod/nord.nvim                               *nord-nvim-gbprod/nord.nvim*
+1. 🖌️ nord.nvim                             *nord-nvim-🖌️-nord.nvim*
 
 Neovim theme using the Nord palette <https://www.nordtheme.com/> that tries to
 be as close as possible to the official vim theme
 <https://github.com/arcticicestudio/nord-vim/> and the official vscode theme
 <https://github.com/arcticicestudio/nord-visual-studio-code>.
 
-**This colorscheme still under developement, please keep calm and report
+**This colorscheme still under developement, please, keep calm and report
 issues**
 
 
