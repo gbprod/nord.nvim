@@ -111,7 +111,7 @@ require("nord").setup({
 ## 🎉 Credits
 
 - [shaunsingh/nord.nvim](https://github.com/shaunsingh/nord.nvim): pretty good
-  Nord theme for Neovim but to far from original and requires too much
+  Nord theme for Neovim but too far from original and requires too much
   customisation for me.
 - [arcticicestudio/nord-visual-studio-code](https://github.com/arcticicestudio/nord-visual-studio-code): For color picking
 - [arcticicestudio/nord-vim](https://github.com/arcticicestudio/nord-vim): For
