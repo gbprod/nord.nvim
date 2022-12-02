@@ -35,6 +35,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [Barbar](https://github.com/romgrk/barbar.nvim)
 - [Cmp](https://github.com/hrsh7th/nvim-cmp/)
 - [Navic](https://github.com/SmiteshP/nvim-navic)
+- [Aerial](https://github.com/stevearc/aerial.nvim)
 
 You're preferred plugin is missing ? Open an issue or, even better, open a pull
 request 😉.
