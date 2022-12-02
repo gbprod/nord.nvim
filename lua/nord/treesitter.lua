@@ -49,7 +49,7 @@ function treesitter.highlights()
     ["@conditional"] = { fg = c.frost.artic_water }, --  keywords related to conditionals (e.g. `if` / `else`)
     ["@repeat"] = { fg = c.frost.artic_water }, --  keywords related to loops (e.g. `for` / `while`)
     ["@debug"] = { fg = c.snow_storm.origin }, --  keywords related to debugging
-    ["@label"] = { fg = c.frost.artic_water }, --  GOTO and other labels (e.g. `label:` in C)
+    ["@label"] = { fg = c.frost.polar_water }, --  GOTO and other labels (e.g. `label:` in C)
     ["@include"] = { fg = c.frost.artic_water }, --  keywords for including modules (e.g. `import` / `from` in Python)
     ["@exception"] = { fg = c.frost.artic_water }, --  keywords related to exceptions (e.g. `throw` / `catch`)
 
