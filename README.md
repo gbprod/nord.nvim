@@ -37,6 +37,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [Cmp](https://github.com/hrsh7th/nvim-cmp/)
 - [Navic](https://github.com/SmiteshP/nvim-navic)
 - [Aerial](https://github.com/stevearc/aerial.nvim)
+- [Notify](https://github.com/rcarriga/nvim-notify)
 
 You're preferred plugin is missing ? Open an issue or, even better, open a pull
 request 😉.
