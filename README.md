@@ -8,7 +8,6 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 
 > "Arctic, north-bluish clean and elegant" - arcticicestudio
 
-
 ![2022-12-01-142011_1277x703_scrot](https://user-images.githubusercontent.com/3751019/205092735-ced8ba05-d15d-4751-9a88-17cefef5ec52.png)
 ![2022-12-01-142157_1270x700_scrot](https://user-images.githubusercontent.com/3751019/205092727-a266d2c8-35fd-4272-b90f-c1f063591e58.png)
 ![2022-12-01-142111_1276x700_scrot](https://user-images.githubusercontent.com/3751019/205092730-9874369f-d045-47c6-8b07-5371cf344223.png)
@@ -84,11 +83,12 @@ require('lualine').setup {
 ```
 
 To support BufferLine, you can add these code to your settings:
+
 ```
 local highlights = require("nord").bufferline_highlights({
-	italic = true,
+ italic = true,
     bold = true,
-	-- fill = "#181c24"
+ -- fill = "#181c24"
 })
 
 require("bufferline").setup({
@@ -98,15 +98,17 @@ require("bufferline").setup({
     highlights = highlights,
 })
 ```
+
 It should look like this
 <img width="1439" alt="image" src="https://user-images.githubusercontent.com/61075605/205430819-597cdac4-8293-46bc-9b0c-428e59f90d2e.png">
 
 or you want to use slant separator
+
 ```
 local highlights = require("nord").bufferline_highlights({
-	italic = true,
+ italic = true,
     bold = true,
-	fill = "#181c24"
+ fill = "#181c24"
 })
 require("bufferline").setup({
     options = {
@@ -115,9 +117,11 @@ require("bufferline").setup({
     highlights = highlights,
 })
 ```
+
 <img width="1439" alt="image" src="https://user-images.githubusercontent.com/61075605/205430852-7175aad8-e9c0-4361-a777-1703414e06e6.png">
 
-The default bufferline highlight is 
+The default bufferline highlight is
+
 ```
 local setting = {
   fill = colors.nord0,
@@ -157,6 +161,16 @@ require("nord").setup({
     variables = {},
   },
 })
+```
+
+### Notify integration
+
+To better support [Notify](https://github.com/rcarriga/nvim-notify), you can add the following code to your settings:
+
+```lua
+vim.api.nvim_set_hl(0, "ErrorMsg", { fg = "#2E3440" })
+vim.api.nvim_set_hl(0, "WarningMsg", { fg = "#2E3440" })
+
 ```
 
 ## 🎉 Credits
