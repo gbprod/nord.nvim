@@ -30,5 +30,6 @@ function nord.load(opts)
 end
 
 nord.setup = config.setup
+nord.bufferline_highlights = require("bufferline.theme").highlights
 
 return nord
