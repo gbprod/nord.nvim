@@ -33,6 +33,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
 - [Leap](https://github.com/ggandor/leap.nvim)
 - [Barbar](https://github.com/romgrk/barbar.nvim)
+- [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [Cmp](https://github.com/hrsh7th/nvim-cmp/)
 - [Navic](https://github.com/SmiteshP/nvim-navic)
 - [Aerial](https://github.com/stevearc/aerial.nvim)
@@ -78,6 +79,54 @@ require('lualine').setup {
     theme = 'nord'
     -- ... your lualine config
   }
+}
+```
+
+To support BufferLine, you can add these code to your settings:
+```
+local highlights = require("nord").bufferline_highlights({
+	italic = true,
+    bold = true,
+	-- fill = "#181c24"
+})
+
+require("bufferline").setup({
+    options = {
+        separator_style = "thin",
+    },
+    highlights = highlights,
+})
+```
+It should look like this
+<img width="1439" alt="image" src="https://user-images.githubusercontent.com/61075605/205430819-597cdac4-8293-46bc-9b0c-428e59f90d2e.png">
+
+or you want to use slant separator
+```
+local highlights = require("nord").bufferline_highlights({
+	italic = true,
+    bold = true,
+	fill = "#181c24"
+})
+require("bufferline").setup({
+    options = {
+        separator_style = "slant",
+    },
+    highlights = highlights,
+})
+```
+<img width="1439" alt="image" src="https://user-images.githubusercontent.com/61075605/205430852-7175aad8-e9c0-4361-a777-1703414e06e6.png">
+
+The default bufferline highlight is 
+```
+local setting = {
+  fill = colors.nord0,
+  indicator = colors.nord9,
+  bg = colors.nord0,
+  buffer_bg = colors.nord0,
+  buffer_bg_selected = colors.nord1,
+  buffer_bg_visible = "#2A2F3A",
+  bold = true,
+  italic = true,
 }
 ```
 
