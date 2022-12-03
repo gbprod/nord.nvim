@@ -28,6 +28,7 @@ function nord.load(opts)
   utils.load(require("nord.plugins.picker").highlights())
   utils.load(require("nord.plugins.ui").highlights())
   utils.load(require("nord.plugins.notify").highlights())
+  utils.load(require("nord.plugins.rainbow").highlights())
 end
 
 nord.setup = config.setup
