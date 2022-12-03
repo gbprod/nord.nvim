@@ -168,10 +168,17 @@ require("nord").setup({
 To better support [Notify](https://github.com/rcarriga/nvim-notify), you can add the following code to your settings:
 
 ```lua
-vim.api.nvim_set_hl(0, "ErrorMsg", { fg = "#2E3440" })
-vim.api.nvim_set_hl(0, "WarningMsg", { fg = "#2E3440" })
-
+vim.api.nvim_set_hl(0, "ErrorMsg", { link = "Normal" })
+vim.api.nvim_set_hl(0, "WarningMsg", { link = "Normal" })
 ```
+Before:
+
+<img width="480" alt="image" src="https://user-images.githubusercontent.com/61075605/205449761-74ecff93-1515-4770-91d4-dad810bba76d.png">
+
+After:
+
+<img width="480" alt="image" src="https://user-images.githubusercontent.com/61075605/205449791-882e0564-e4a9-4645-897f-31bcd995c5c6.png">
+
 
 ## 🎉 Credits
 
