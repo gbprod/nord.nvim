@@ -28,6 +28,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [Git Gutter](https://github.com/airblade/vim-gitgutter)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+- [NeoTree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [WhichKey](https://github.com/liuchengxu/vim-which-key)
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
 - [Leap](https://github.com/ggandor/leap.nvim)
