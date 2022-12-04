@@ -20,6 +20,13 @@ function filetree.highlights()
     NvimTreeSymlink = { fg = c.frost.artic_water },
     NvimTreeFolderIcon = { fg = c.frost.artic_water },
     NvimTreeOpenedFolderName = { fg = c.snow_storm.origin },
+
+    NeoTreeSymbolicLinkTarget = { fg = c.frost.artic_water },
+    NeoTreeRootName = { fg = c.snow_storm.origin, bold = true },
+    NeoTreeDirectoryName = { fg = c.snow_storm.origin },
+    NeoTreeDirectoryIcon = { fg = c.frost.artic_water },
+    NeoTreeFileName = { fg = c.snow_storm.origin },
+    NeoTreeFileIcon = { fg = c.snow_storm.origin },
   }
 end
 
