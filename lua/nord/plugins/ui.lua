@@ -4,13 +4,13 @@ local c = require("nord.colors")
 
 function ui.highlights()
   return {
-    -- WhichKey
+    -- folke/which-key.nvim
     WhichKey = { fg = c.frost.ice, bold = true },
     WhichKeyGroup = { fg = c.frost.artic_water },
     WhichKeyDesc = { fg = c.snow_storm.origin },
     WhichKeyFloat = { bg = c.polar_night.bright },
 
-    -- Navic
+    -- SmiteshP/nvim-navic
     NavicIconsFile = { fg = c.frost.polar_water, bg = c.polar_night.brightest },
     NavicIconsModule = { fg = c.frost.polar_water, bg = c.polar_night.brightest },
     NavicIconsNamespace = { fg = c.frost.polar_water, bg = c.polar_night.brightest },
@@ -41,6 +41,7 @@ function ui.highlights()
     NavicText = { fg = c.snow_storm.origin, bg = c.polar_night.brightest },
     NavicSeparator = { fg = c.frost.artic_water, bg = c.polar_night.brightest },
 
+    -- stevearc/aerial.nvim
     AerialLine = { bg = c.polar_night.bright },
     AerialLineNC = { bg = c.polar_night.bright },
 
@@ -97,6 +98,10 @@ function ui.highlights()
     AerialStruct = { fg = c.frost.artic_water },
     AerialTypeParameter = { fg = c.frost.artic_ocean },
     AerialVariable = { fg = c.snow_storm.origin, bold = true },
+
+    -- vigoux/notifier.nvim
+    NotifierTitle = { fg = c.frost.polar_water, bold = true },
+    NotifierContentDim = { fg = c.polar_night.light },
   }
 end
 
