@@ -1,11 +1,11 @@
 local colors = require("nord.colors")
 
 local setting = {
-  fill = colors.nord0,
-  indicator = colors.nord9,
-  bg = colors.nord0,
-  buffer_bg = colors.nord0,
-  buffer_bg_selected = colors.nord1,
+  fill = colors.polar_night.origin,
+  indicator = colors.frost.artic_water,
+  bg = colors.polar_night.origin,
+  buffer_bg = colors.polar_night.origin,
+  buffer_bg_selected = colors.polar_night.bright,
   buffer_bg_visible = "#2A2F3A",
   bold = true,
   italic = true,
