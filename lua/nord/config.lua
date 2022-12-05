@@ -8,13 +8,19 @@ local defaults = {
   borders = true,
   errors = { mode = "bg" }, -- [bg|fg|none]
 
+  -- Value is any valid attr-list value for `:help nvim_set_hl`
   styles = {
-    -- Value is any valid attr-list value for `:help nvim_set_hl`
     comments = { italic = true },
     keywords = {},
     functions = {},
     variables = {},
     errors = {},
+
+    -- To customize lualine/bufferline
+    bufferline = {
+      current = {},
+      modified = { italic = true },
+    },
   },
 }
 

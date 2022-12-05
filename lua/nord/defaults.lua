@@ -16,11 +16,11 @@ function defaluts.highlights()
     Directory = { fg = c.frost.ice }, -- directory names (and other special names in listings)
     EndOfBuffer = { fg = c.polar_night.bright }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     ErrorMsg = { fg = c.snow_storm.origin, bg = c.aurora.red }, -- error messages on the command line
-    VertSplit = { fg = c.polar_night.brighter, bg = options.borders and c.polar_night.bright or c.polar_night.origin }, -- the column separating vertically split windows
+    VertSplit = { fg = options.borders and c.polar_night.bright or c.polar_night.origin, bg = c.none }, -- the column separating vertically split windows
     WinSeparator = {
-      fg = c.polar_night.brighter,
-      bg = options.borders and c.polar_night.bright or c.polar_night.origin,
-    }, -- the column separating vertically split windows
+      fg = options.borders and c.polar_night.bright or c.polar_night.origin,
+      bg = c.none,
+    }, -- Separators between window splits.
     Folded = { fg = c.polar_night.brightest, bg = c.polar_night.bright }, -- line used for closed folds
     FoldColumn = { fg = c.polar_night.brightest, bg = c.polar_night.origin }, -- 'foldcolumn'
     SignColumn = { fg = c.polar_night.bright, bg = options.transparent and c.none or c.polar_night.origin }, -- column where |signs| are displayed
