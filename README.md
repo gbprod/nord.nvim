@@ -127,7 +127,7 @@ require('lualine').setup {
 <summary><b>akinsho/bufferline.nvim</b></summary>
 To use this theme for `bufferline`, add this to your config:
 
-```
+```lua
 require("bufferline").setup({
     options = {
         separator_style = "thin",
