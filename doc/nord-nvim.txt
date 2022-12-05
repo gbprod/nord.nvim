@@ -9,6 +9,7 @@ Table of Contents                                *nord-nvim-table-of-contents*
   - 📦 Installation                            |nord-nvim-📦-installation|
   - 🚀 Usage                                          |nord-nvim-🚀-usage|
   - ⚙️ Configuration                      |nord-nvim-⚙️-configuration|
+  - 🤝 Integrations                            |nord-nvim-🤝-integrations|
   - 🎉 Credits                                      |nord-nvim-🎉-credits|
 
 ==============================================================================
@@ -54,13 +55,16 @@ PLUGIN SUPPORT ~
 - Git Gutter <https://github.com/airblade/vim-gitgutter>
 - Telescope <https://github.com/nvim-telescope/telescope.nvim>
 - NvimTree <https://github.com/kyazdani42/nvim-tree.lua>
+- NeoTree <https://github.com/nvim-neo-tree/neo-tree.nvim>
 - WhichKey <https://github.com/liuchengxu/vim-which-key>
 - Lualine <https://github.com/hoob3rt/lualine.nvim>
 - Leap <https://github.com/ggandor/leap.nvim>
 - Barbar <https://github.com/romgrk/barbar.nvim>
+- Bufferline <https://github.com/akinsho/bufferline.nvim>
 - Cmp <https://github.com/hrsh7th/nvim-cmp/>
 - Navic <https://github.com/SmiteshP/nvim-navic>
 - Aerial <https://github.com/stevearc/aerial.nvim>
+- Notify <https://github.com/rcarriga/nvim-notify>
 
 
 You’re preferred plugin is missing ? Open an issue or, even better, open a
@@ -99,20 +103,6 @@ Enable the colorscheme:
 <
 
 
-To enable the `nord` theme for `Lualine`, simply specify it in your lualine
-settings:
-
->
-    require('lualine').setup {
-      options = {
-        -- ... your lualine config
-        theme = 'nord'
-        -- ... your lualine config
-      }
-    }
-<
-
-
 ⚙️ CONFIGURATION                          *nord-nvim-⚙️-configuration*
 
 
@@ -139,7 +129,45 @@ Nord.nvim will use the default options, unless you call `setup`.
         keywords = {},
         functions = {},
         variables = {},
+    
+        -- To customize lualine/bufferline
+        bufferline = {
+          current = {},
+          modified = { italic = true },
+        },
       },
+    })
+<
+
+
+🤝 INTEGRATIONS                                *nord-nvim-🤝-integrations*
+
+nvim-lualine/lualine.nvim ~
+
+To enable the `nord` theme for `Lualine`, simply specify it in your lualine
+settings:
+
+>
+    require('lualine').setup {
+      options = {
+        -- ... your lualine config
+        theme = 'nord'
+        -- ... your lualine config
+      }
+    }
+<
+
+
+akinsho/bufferline.nvim ~
+
+To use this theme for `bufferline`, add this to your config:
+
+>
+    require("bufferline").setup({
+        options = {
+            separator_style = "thin",
+        },
+        highlights = require("nord.plugins.bufferline").akinsho(),
     })
 <
 
