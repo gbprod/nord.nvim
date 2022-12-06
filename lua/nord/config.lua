@@ -22,6 +22,8 @@ local defaults = {
       modified = { italic = true },
     },
   },
+  --- You can override specific highlights to use other groups or a hex color
+  on_highlights = function(highlights, colors) end,
 }
 
 config.options = {}

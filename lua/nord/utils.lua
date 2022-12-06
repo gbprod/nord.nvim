@@ -1,15 +1,16 @@
 local utils = {}
 local c = require("nord.colors")
+local options = require("nord.config").options
 
-function utils.load(highlights)
+function utils.load(...)
+  local highlights = vim.tbl_extend("force", ...)
+  options.on_highlights(highlights, c)
   for group, hl in pairs(highlights) do
     vim.api.nvim_set_hl(0, group, hl)
   end
 end
 
 function utils.make_diff(color)
-  local options = require("nord.config").options
-
   if options.diff.mode == "fg" then
     return { fg = color, bg = c.polar_night.bright }
   else
@@ -18,8 +19,6 @@ function utils.make_diff(color)
 end
 
 function utils.make_error(color)
-  local options = require("nord.config").options
-
   if options.errors.mode == "bg" then
     return vim.tbl_extend("force", { bg = color }, options.styles.errors)
   elseif options.errors.mode == "fg" then
@@ -33,9 +32,9 @@ function utils.darken(hex, amount, bg)
   return utils.blend(hex, bg or c.polar_night.origin, amount)
 end
 
-local function hexToRgb(c)
-  c = string.lower(c)
-  return { tonumber(c:sub(2, 3), 16), tonumber(c:sub(4, 5), 16), tonumber(c:sub(6, 7), 16) }
+local function hexToRgb(color)
+  color = string.lower(color)
+  return { tonumber(color:sub(2, 3), 16), tonumber(color:sub(4, 5), 16), tonumber(color:sub(6, 7), 16) }
 end
 
 function utils.blend(foreground, background, alpha)
