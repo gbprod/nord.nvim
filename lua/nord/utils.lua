@@ -1,9 +1,9 @@
 local utils = {}
 local c = require("nord.colors")
-local options = require("nord.config").options
 
 function utils.load(...)
   local highlights = vim.tbl_extend("force", ...)
+  local options = require("nord.config").options
   options.on_highlights(highlights, c)
   for group, hl in pairs(highlights) do
     vim.api.nvim_set_hl(0, group, hl)
@@ -11,6 +11,7 @@ function utils.load(...)
 end
 
 function utils.make_diff(color)
+  local options = require("nord.config").options
   if options.diff.mode == "fg" then
     return { fg = color, bg = c.polar_night.bright }
   else
@@ -19,6 +20,7 @@ function utils.make_diff(color)
 end
 
 function utils.make_error(color)
+  local options = require("nord.config").options
   if options.errors.mode == "bg" then
     return vim.tbl_extend("force", { bg = color }, options.styles.errors)
   elseif options.errors.mode == "fg" then
