@@ -14,20 +14,21 @@ function nord.load(opts)
     require("nord.terminal").apply()
   end
 
-  utils.load(require("nord.defaults").highlights())
-  utils.load(require("nord.syntax").highlights())
-  utils.load(require("nord.treesitter").highlights())
-  utils.load(require("nord.terminal").highlights())
-  utils.load(require("nord.lsp").highlights())
-
-  utils.load(require("nord.plugins.bufferline").highlights())
-  utils.load(require("nord.plugins.git").highlights())
-  utils.load(require("nord.plugins.completion").highlights())
-  utils.load(require("nord.plugins.filetree").highlights())
-  utils.load(require("nord.plugins.motion").highlights())
-  utils.load(require("nord.plugins.picker").highlights())
-  utils.load(require("nord.plugins.ui").highlights())
-  utils.load(require("nord.plugins.notify").highlights())
+  utils.load(
+    require("nord.defaults").highlights(),
+    require("nord.lsp").highlights(),
+    require("nord.syntax").highlights(),
+    require("nord.terminal").highlights(),
+    require("nord.treesitter").highlights(),
+    require("nord.plugins.bufferline").highlights(),
+    require("nord.plugins.completion").highlights(),
+    require("nord.plugins.filetree").highlights(),
+    require("nord.plugins.git").highlights(),
+    require("nord.plugins.motion").highlights(),
+    require("nord.plugins.notify").highlights(),
+    require("nord.plugins.picker").highlights(),
+    require("nord.plugins.ui").highlights()
+  )
 end
 
 nord.setup = config.setup
