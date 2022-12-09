@@ -101,6 +101,10 @@ require("nord").setup({
       modified = { italic = true },
     },
   },
+
+  --- You can override specific highlights to use other groups or a hex color
+  --- function will be called with all highlights and the colorScheme table
+  on_highlights = function(highlights, colors) end,
 })
 ```
 
