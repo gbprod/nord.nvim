@@ -10,12 +10,12 @@ function bufferline.highlights()
 
   return {
     -- Barbar
-    BufferTabpageFill = { bg = c.polar_night.origin },
+    BufferTabpageFill = { bg = c.polar_night.origin, fg = c.polar_night.origin },
 
     BufferCurrent = current_hi,
     BufferCurrentIndex = current_hi,
     BufferCurrentMod = vim.tbl_extend("force", { bg = c.polar_night.brighter, fg = c.aurora.yellow }, config.modified),
-    BufferCurrentSign = current_hi,
+    BufferCurrentSign = vim.tbl_extend("force", current_hi, { fg = c.frost.artic_water }),
     BufferCurrentTarget = vim.tbl_extend(
       "force",
       { bg = c.polar_night.brighter, fg = c.aurora.red, bold = true },
@@ -25,7 +25,7 @@ function bufferline.highlights()
     BufferVisible = { bg = c.polar_night.bright },
     BufferVisibleIndex = { bg = c.polar_night.bright },
     BufferVisibleMod = vim.tbl_extend("force", { bg = c.polar_night.bright, fg = c.aurora.yellow }, config.modified),
-    BufferVisibleSign = { bg = c.polar_night.bright },
+    BufferVisibleSign = { bg = c.polar_night.bright, fg = c.frost.artic_water },
     BufferVisibleTarget = { bg = c.polar_night.bright, fg = c.aurora.red, bold = true },
 
     BufferInactive = { bg = c.polar_night.origin, fg = c.polar_night.light },
@@ -35,7 +35,7 @@ function bufferline.highlights()
       { bg = c.polar_night.origin, fg = utils.darken(c.aurora.yellow, 0.4) },
       config.modified
     ),
-    BufferInactiveSign = { bg = c.polar_night.origin, fg = c.polar_night.light },
+    BufferInactiveSign = { bg = c.polar_night.origin, fg = c.polar_night.origin },
     BufferInactiveTarget = { bg = c.polar_night.origin, fg = c.aurora.red, bold = true },
 
     BufferTabpages = { bg = c.bg_statusline, fg = c.none },
