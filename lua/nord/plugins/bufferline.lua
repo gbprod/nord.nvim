@@ -21,12 +21,20 @@ function bufferline.highlights()
       { bg = c.polar_night.brighter, fg = c.aurora.red, bold = true },
       config.current
     ),
+    BufferCurrentHINT = vim.tbl_extend("force", current_hi, { fg = c.frost.artic_water }),
+    BufferCurrentINFO = vim.tbl_extend("force", current_hi, { fg = c.frost.ice }),
+    BufferCurrentWARN = vim.tbl_extend("force", current_hi, { fg = c.aurora.yellow }),
+    BufferCurrentERROR = vim.tbl_extend("force", current_hi, { fg = c.aurora.red }),
 
     BufferVisible = { bg = c.polar_night.bright },
     BufferVisibleIndex = { bg = c.polar_night.bright },
     BufferVisibleMod = vim.tbl_extend("force", { bg = c.polar_night.bright, fg = c.aurora.yellow }, config.modified),
     BufferVisibleSign = { bg = c.polar_night.bright, fg = c.frost.artic_water },
     BufferVisibleTarget = { bg = c.polar_night.bright, fg = c.aurora.red, bold = true },
+    BufferVisibleHINT = { bg = c.polar_night.bright, fg = c.frost.artic_water },
+    BufferVisibleINFO = { bg = c.polar_night.bright, fg = c.frost.ice },
+    BufferVisibleWARN = { bg = c.polar_night.bright, fg = c.aurora.yellow },
+    BufferVisibleERROR = { bg = c.polar_night.bright, fg = c.aurora.red },
 
     BufferInactive = { bg = c.polar_night.origin, fg = c.polar_night.light },
     BufferInactiveIndex = { bg = c.polar_night.origin, fg = c.polar_night.light },
@@ -37,6 +45,10 @@ function bufferline.highlights()
     ),
     BufferInactiveSign = { bg = c.polar_night.origin, fg = c.polar_night.origin },
     BufferInactiveTarget = { bg = c.polar_night.origin, fg = c.aurora.red, bold = true },
+    BufferInactiveHINT = { bg = c.polar_night.origin, fg = utils.darken(c.frost.artic_water, 0.4) },
+    BufferInactiveINFO = { bg = c.polar_night.origin, fg = utils.darken(c.frost.ice, 0.4) },
+    BufferInactiveWARN = { bg = c.polar_night.origin, fg = utils.darken(c.aurora.yellow, 0.4) },
+    BufferInactiveERROR = { bg = c.polar_night.origin, fg = utils.darken(c.aurora.red, 0.4) },
 
     BufferTabpages = { bg = c.bg_statusline, fg = c.none },
     BufferTabpage = { bg = c.bg_statusline, fg = c.border_highlight },
