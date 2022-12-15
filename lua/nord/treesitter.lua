@@ -107,6 +107,8 @@ function treesitter.highlights()
     -- Language specific
     ["@constant.git_rebase"] = { fg = c.frost.polar_water },
     ["@field.yaml"] = { fg = c.frost.polar_water },
+    ["@text.phpdoc"] = { fg = c.polar_night.light },
+    ["@attribute.phpdoc"] = { fg = c.frost.artic_water },
   }
 end
 
