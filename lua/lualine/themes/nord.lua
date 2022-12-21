@@ -4,8 +4,8 @@ local nord = {}
 
 nord.normal = {
   a = { fg = c.polar_night.bright, bg = c.frost.ice },
-  b = { fg = c.snow_storm.brighter, bg = c.polar_night.brighter },
-  c = { fg = c.snow_storm.brighter, bg = c.polar_night.brightest },
+  b = { fg = c.snow_storm.brighter, bg = c.polar_night.bright },
+  c = { fg = c.snow_storm.brighter, bg = c.polar_night.brighter },
 }
 
 nord.insert = {

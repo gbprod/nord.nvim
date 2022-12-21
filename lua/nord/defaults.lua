@@ -36,8 +36,8 @@ function defaluts.highlights()
     Normal = { fg = c.snow_storm.origin, bg = options.transparent and c.none or c.polar_night.origin }, -- normal text
     NormalFloat = { fg = c.snow_storm.origin, bg = c.polar_night.origin }, -- Normal text in floating windows.
     FloatBorder = { fg = c.polar_night.brightest, bg = c.polar_night.origin }, -- Borders of floating windows
-    Pmenu = { fg = c.snow_storm.origin, bg = c.polar_night.brighter }, -- Popup menu: normal item.
-    PmenuSel = { fg = c.snow_storm.origin, bg = c.polar_night.brightest }, -- Popup menu: selected item.
+    Pmenu = { fg = c.snow_storm.origin, bg = c.polar_night.bright }, -- Popup menu: normal item.
+    PmenuSel = { fg = c.snow_storm.origin, bg = c.polar_night.brighter }, -- Popup menu: selected item.
     PmenuSbar = { fg = c.snow_storm.origin, bg = c.polar_night.brighter }, -- Popup menu: scrollbar.
     PmenuThumb = { fg = c.frost.ice, bg = c.polar_night.brightest }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.snow_storm.origin }, -- |hit-enter| prompt and yes/no questions
@@ -58,7 +58,7 @@ function defaluts.highlights()
       undercurl = true,
     }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 
-    StatusLine = { fg = c.frost.ice, bg = c.polar_night.brightest }, -- status line of current window
+    StatusLine = { fg = c.frost.ice, bg = c.polar_night.brighter }, -- status line of current window
     StatusLineNC = { fg = c.snow_storm.origin, bg = c.polar_night.brightest }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
     TabLine = { fg = c.snow_storm.origin, bg = c.fg_gutter }, -- tab pages line, not active tab page label
