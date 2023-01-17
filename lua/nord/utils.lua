@@ -12,11 +12,8 @@ end
 
 function utils.make_diff(color)
   local options = require("nord.config").options
-  if options.diff.mode == "fg" then
-    return { fg = color, bg = c.polar_night.bright }
-  else
-    return { fg = c.aurora.green, bg = c.none, reverse = true }
-  end
+
+  return { fg = color, bg = c.none, reverse = options.diff.mode ~= "fg" }
 end
 
 function utils.make_error(color)
