@@ -1,11 +1,21 @@
 local utils = {}
 local c = require("nord.colors")
+local colorblind = require("nord.colorblind")
 
 function utils.load(...)
   local highlights = vim.tbl_extend("force", ...)
   local options = require("nord.config").options
   options.on_highlights(highlights, c)
   for group, hl in pairs(highlights) do
+    local colorblind_opt = require("nord.config").options.colorblind
+    if colorblind_opt.enable then
+      if hl.fg and hl.fg ~= "NONE" then
+        hl.fg = colorblind.daltonize(hl.fg, colorblind_opt.severity)
+      end
+      if hl.bg and hl.bg ~= "NONE" then
+        hl.bg = colorblind.daltonize(hl.bg, colorblind_opt.severity)
+      end
+    end
     vim.api.nvim_set_hl(0, group, hl)
   end
 end
