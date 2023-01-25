@@ -47,6 +47,7 @@ function bufferline.highlights()
     BufferInactiveTarget = { bg = c.polar_night.origin, fg = c.aurora.red, bold = true },
     BufferInactiveHINT = { bg = c.polar_night.origin, fg = utils.darken(c.frost.artic_water, 0.4) },
     BufferInactiveINFO = { bg = c.polar_night.origin, fg = utils.darken(c.frost.ice, 0.4) },
+
     BufferInactiveWARN = { bg = c.polar_night.origin, fg = utils.darken(c.aurora.yellow, 0.4) },
     BufferInactiveERROR = { bg = c.polar_night.origin, fg = utils.darken(c.aurora.red, 0.4) },
 
@@ -59,7 +60,7 @@ function bufferline.akinsho()
   local current_hi =
     vim.tbl_extend("force", { bg = c.polar_night.brighter, italic = false, bold = false }, config.current)
 
-  return {
+  local hi = {
     fill = { bg = c.polar_night.origin, fg = c.polar_night.light },
     background = { bg = c.polar_night.origin, fg = c.polar_night.light },
 
@@ -127,5 +128,6 @@ function bufferline.akinsho()
     tab_separator_selected = { fg = c.aurora.purple, bg = c.polar_night.brighter },
     tab_close = { fg = c.snow_storm.origin, bg = c.polar_night.origin },
   }
+  return require("nord.utils.colorblind").make_up(hi)
 end
 return bufferline

@@ -169,6 +169,53 @@ function M.daltonize(color, opts)
   return to_str(lrgb_to_srgb(diff))
 end
 
+function M.apply(highlights, opts)
+  local result = {}
+  for group, hl in pairs(highlights) do
+    local newhl = {}
+    for k, v in pairs(hl) do
+      newhl[k] = v
+    end
+    if hl.fg and hl.fg ~= "NONE" then
+      newhl.fg = M.daltonize(hl.fg, opts)
+    end
+    if hl.bg and hl.bg ~= "NONE" then
+      newhl.bg = M.daltonize(hl.bg, opts)
+    end
+    if hl.sp and hl.sp ~= "NONE" then
+      newhl.sp = M.daltonize(hl.sp, opts)
+    end
+    result[group] = newhl
+  end
+  return result
+end
+
+function M.make_up(highlights)
+  local options = require("nord.config").options.colorblind
+  if not options.enable then
+    return highlights
+  end
+
+  local result = {}
+  for group, hl in pairs(highlights) do
+    local newhl = {}
+    for k, v in pairs(hl) do
+      newhl[k] = v
+    end
+    if hl.fg and hl.fg ~= "NONE" then
+      newhl.fg = M.daltonize(hl.fg, options.severity)
+    end
+    if hl.bg and hl.bg ~= "NONE" then
+      newhl.bg = M.daltonize(hl.bg, options.severity)
+    end
+    if hl.sp and hl.sp ~= "NONE" then
+      newhl.sp = M.daltonize(hl.sp, options.severity)
+    end
+    result[group] = newhl
+  end
+
+  return result
+end
 -- Keeping This here as by test case and what I was supposed to get
 --
 -- local srgb = from_str("#63cdcf")
