@@ -30,7 +30,7 @@ nord.inactive = {
   c = { fg = c.snow_storm.origin, bg = c.polar_night.bright },
 }
 
-local make_up = require("nord.colorblind").make_up
+local make_up = require("nord.utils.colorblind").make_up
 
 nord.normal = make_up(nord.normal)
 nord.insert = make_up(nord.insert)
