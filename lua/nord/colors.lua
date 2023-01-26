@@ -49,7 +49,7 @@ function colors.daltonize(severity)
     },
     frost = {
       polar_water = daltonize(defaults.frost.polar_water, severity),
-      ice = daltonize(defaults.frost.polar_water, severity),
+      ice = daltonize(defaults.frost.ice, severity),
       artic_water = daltonize(defaults.frost.artic_water, severity),
       artic_ocean = daltonize(defaults.frost.artic_ocean, severity),
     },
