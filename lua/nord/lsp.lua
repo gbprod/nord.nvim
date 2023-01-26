@@ -1,7 +1,7 @@
 local utils = require("nord.utils")
 local lsp = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function lsp.highlights()
   return {

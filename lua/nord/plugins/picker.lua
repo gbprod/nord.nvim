@@ -1,6 +1,6 @@
 local picker = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function picker.highlights()
   return {

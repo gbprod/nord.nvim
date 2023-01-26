@@ -3,7 +3,7 @@ local config = require("nord.config").options.styles.bufferline
 
 local bufferline = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function bufferline.highlights()
   local current_hi = vim.tbl_extend("force", { bg = c.polar_night.brighter }, config.current)
@@ -60,7 +60,7 @@ function bufferline.akinsho()
   local current_hi =
     vim.tbl_extend("force", { bg = c.polar_night.brighter, italic = false, bold = false }, config.current)
 
-  local hi = {
+  return {
     fill = { bg = c.polar_night.origin, fg = c.polar_night.light },
     background = { bg = c.polar_night.origin, fg = c.polar_night.light },
 
@@ -128,6 +128,5 @@ function bufferline.akinsho()
     tab_separator_selected = { fg = c.aurora.purple, bg = c.polar_night.brighter },
     tab_close = { fg = c.snow_storm.origin, bg = c.polar_night.origin },
   }
-  return require("nord.utils.colorblind").make_up(hi)
 end
 return bufferline

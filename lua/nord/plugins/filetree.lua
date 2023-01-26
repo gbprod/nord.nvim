@@ -1,7 +1,7 @@
 local filetree = {}
 
 local config = require("nord.config")
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function filetree.highlights()
   return {

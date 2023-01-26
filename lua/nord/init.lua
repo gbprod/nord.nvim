@@ -8,6 +8,10 @@ function nord.load(opts)
     require("nord.config").extend(opts)
   end
 
+  if config.options.colorblind.enable then
+    require("nord.colors").daltonize(config.options.colorblind.severity)
+  end
+
   vim.cmd([[ highlight clear ]])
 
   if config.options.terminal_colors then
