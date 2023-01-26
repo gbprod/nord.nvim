@@ -1,6 +1,6 @@
 local git = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function git.highlights()
   return {

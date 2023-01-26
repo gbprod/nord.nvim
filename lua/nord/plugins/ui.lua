@@ -1,6 +1,6 @@
 local ui = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function ui.highlights()
   return {

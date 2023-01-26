@@ -1,6 +1,6 @@
 local cmp = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function cmp.highlights()
   return {

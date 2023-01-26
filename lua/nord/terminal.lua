@@ -1,6 +1,6 @@
 local terminal = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function terminal.apply()
   -- dark

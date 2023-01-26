@@ -1,5 +1,5 @@
 local utils = {}
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function utils.load(...)
   local highlights = vim.tbl_extend("force", ...)
@@ -28,7 +28,14 @@ function utils.make_error(color)
 end
 
 function utils.darken(hex, amount, bg)
-  return utils.blend(hex, bg or c.polar_night.origin, amount)
+  local darken = utils.blend(hex, bg or c.polar_night.origin, amount)
+
+  local options = require("nord.config").options
+  if not options.colorblind.enabled then
+    return darken
+  end
+
+  return require("nord.utils.colorblind").daltonize(darken, options.colorblind.severity)
 end
 
 local function hexToRgb(color)

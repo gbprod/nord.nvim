@@ -1,6 +1,6 @@
 local motion = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function motion.highlights()
   return {

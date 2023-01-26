@@ -1,7 +1,7 @@
 local utils = require("nord.utils")
 local notify = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function notify.highlights()
   return {

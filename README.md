@@ -102,6 +102,18 @@ require("nord").setup({
     },
   },
 
+  -- colorblind mode
+  -- see https://github.com/EdenEast/nightfox.nvim#colorblind
+  -- simulation mode has not been implemented yet.
+  colorblind = {
+    enable = false,
+    severity = {
+      protan = 0.0,
+      deutan = 0.0,
+      tritan = 0.0,
+    },
+  }
+
   --- You can override specific highlights to use other groups or a hex color
   --- function will be called with all highlights and the colorScheme table
   on_highlights = function(highlights, colors) end,
@@ -152,3 +164,4 @@ require("bufferline").setup({
   his years of good and loyal service.
 - [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim): For a lot
   of code inspiration.
+- [EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim#colorblind): For daltonization algorithm

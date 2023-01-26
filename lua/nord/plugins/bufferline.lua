@@ -3,7 +3,7 @@ local config = require("nord.config").options.styles.bufferline
 
 local bufferline = {}
 
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 
 function bufferline.highlights()
   local current_hi = vim.tbl_extend("force", { bg = c.polar_night.brighter }, config.current)
@@ -47,6 +47,7 @@ function bufferline.highlights()
     BufferInactiveTarget = { bg = c.polar_night.origin, fg = c.aurora.red, bold = true },
     BufferInactiveHINT = { bg = c.polar_night.origin, fg = utils.darken(c.frost.artic_water, 0.4) },
     BufferInactiveINFO = { bg = c.polar_night.origin, fg = utils.darken(c.frost.ice, 0.4) },
+
     BufferInactiveWARN = { bg = c.polar_night.origin, fg = utils.darken(c.aurora.yellow, 0.4) },
     BufferInactiveERROR = { bg = c.polar_night.origin, fg = utils.darken(c.aurora.red, 0.4) },
 

@@ -1,4 +1,4 @@
-local c = require("nord.colors")
+local c = require("nord.colors").palette
 local utils = require("nord.utils")
 
 local treesitter = {}

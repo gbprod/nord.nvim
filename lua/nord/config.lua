@@ -22,6 +22,14 @@ local defaults = {
       modified = { italic = true },
     },
   },
+  colorblind = {
+    enable = false,
+    severity = {
+      protan = 0,
+      deutan = 0,
+      tritan = 0,
+    },
+  },
   --- You can override specific highlights to use other groups or a hex color
   on_highlights = function(highlights, colors) end,
 }
