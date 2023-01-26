@@ -26,6 +26,8 @@ function notify.highlights()
     NotifyTRACEIcon = { fg = c.aurora.purple },
     NotifyTRACETitle = { fg = c.aurora.purple },
 
+    NotifyBackground = { bg = c.polar_night.origin },
+
     -- vigoux/notifier.nvim
     NotifierTitle = { fg = c.frost.polar_water, bold = true },
     NotifierContentDim = { fg = c.polar_night.light },
