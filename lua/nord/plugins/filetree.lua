@@ -27,6 +27,11 @@ function filetree.highlights()
     NeoTreeDirectoryIcon = { fg = c.frost.artic_water },
     NeoTreeFileName = { fg = c.snow_storm.origin },
     NeoTreeFileIcon = { fg = c.snow_storm.origin },
+
+    NeoTreeTabInactive = { fg = c.polar_night.light, bg = c.polar_night.origin },
+    NeoTreeTabActive = { fg = c.snow_storm.origin, bg = c.polar_night.brighter, bold = true },
+    NeoTreeTabSeparatorInactive = { fg = c.polar_night.origin, bg = c.polar_night.origin },
+    NeoTreeTabSeparatorActive = { fg = c.polar_night.brighter, bg = c.polar_night.origin },
   }
 end
 
