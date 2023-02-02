@@ -1,4 +1,5 @@
 local c = require("nord.colors").palette
+local utils = require("nord.utils")
 
 local nord = {}
 
@@ -25,8 +26,8 @@ nord.command = {
 }
 
 nord.inactive = {
-  a = { fg = c.snow_storm.origin, bg = c.polar_night.origin },
-  b = { fg = c.snow_storm.origin, bg = c.polar_night.origin },
+  a = { fg = c.snow_storm.origin, bg = utils.make_global_bg() },
+  b = { fg = c.snow_storm.origin, bg = utils.make_global_bg() },
   c = { fg = c.snow_storm.origin, bg = c.polar_night.bright },
 }
 

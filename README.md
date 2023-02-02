@@ -107,6 +107,7 @@ require("nord").setup({
   -- simulation mode has not been implemented yet.
   colorblind = {
     enable = false,
+    preserve_background = false,
     severity = {
       protan = 0.0,
       deutan = 0.0,

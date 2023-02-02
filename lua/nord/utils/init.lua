@@ -56,4 +56,18 @@ function utils.blend(foreground, background, alpha)
   return string.format("#%02x%02x%02x", blendChannel(1), blendChannel(2), blendChannel(3))
 end
 
+function utils.make_global_bg(transparent)
+  local options = require("nord.config").options
+
+  if options.transparent and transparent then
+    return c.none
+  end
+
+  if options.colorblind.enable and options.colorblind.preserve_background then
+    return require("nord.colors").default_bg
+  end
+
+  return c.polar_night.origin
+end
+
 return utils

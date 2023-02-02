@@ -1,9 +1,11 @@
 local filetree = {}
 
 local config = require("nord.config")
+local utils = require("nord.utils")
 local c = require("nord.colors").palette
 
 function filetree.highlights()
+  local global_bg = utils.make_global_bg()
   return {
     -- NvimTree
     NvimTreeNormal = { fg = c.snow_storm.origin },
@@ -28,10 +30,10 @@ function filetree.highlights()
     NeoTreeFileName = { fg = c.snow_storm.origin },
     NeoTreeFileIcon = { fg = c.snow_storm.origin },
 
-    NeoTreeTabInactive = { fg = c.polar_night.light, bg = c.polar_night.origin },
+    NeoTreeTabInactive = { fg = c.polar_night.light, bg = global_bg },
     NeoTreeTabActive = { fg = c.snow_storm.origin, bg = c.polar_night.brighter, bold = true },
-    NeoTreeTabSeparatorInactive = { fg = c.polar_night.origin, bg = c.polar_night.origin },
-    NeoTreeTabSeparatorActive = { fg = c.polar_night.brighter, bg = c.polar_night.origin },
+    NeoTreeTabSeparatorInactive = { fg = c.polar_night.origin, bg = global_bg },
+    NeoTreeTabSeparatorActive = { fg = c.polar_night.brighter, bg = global_bg },
   }
 end
 

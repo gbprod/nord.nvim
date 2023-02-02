@@ -5,6 +5,7 @@ local defaluts = {}
 
 function defaluts.highlights()
   local options = require("nord.config").options
+  local global_bg = utils.make_global_bg()
 
   return {
     ColorColumn = { bg = c.polar_night.bright }, -- used for the columns set with 'colorcolumn'
@@ -22,8 +23,8 @@ function defaluts.highlights()
       bg = c.none,
     }, -- Separators between window splits.
     Folded = { fg = c.snow_storm.brightest, bg = c.polar_night.bright }, -- line used for closed folds
-    FoldColumn = { fg = c.polar_night.brightest, bg = c.polar_night.origin }, -- 'foldcolumn'
-    SignColumn = { fg = c.polar_night.bright, bg = options.transparent and c.none or c.polar_night.origin }, -- column where |signs| are displayed
+    FoldColumn = { fg = c.polar_night.brightest, bg = global_bg }, -- 'foldcolumn'
+    SignColumn = { fg = c.polar_night.bright, bg = utils.make_global_bg(true) }, -- column where |signs| are displayed
     -- Substitute = { link = "Search" }, -- |:substitute| replacement text highlighting
     LineNr = { fg = c.polar_night.brightest, bg = c.none }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = c.snow_storm.origin, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -33,9 +34,9 @@ function defaluts.highlights()
     MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg = { fg = c.frost.ice }, -- |more-prompt|
     NonText = { fg = c.polar_night.brighter }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal = { fg = c.snow_storm.origin, bg = options.transparent and c.none or c.polar_night.origin }, -- normal text
-    NormalFloat = { fg = c.snow_storm.origin, bg = c.polar_night.origin }, -- Normal text in floating windows.
-    FloatBorder = { fg = c.polar_night.brightest, bg = c.polar_night.origin }, -- Borders of floating windows
+    Normal = { fg = c.snow_storm.origin, bg = utils.make_global_bg(true) }, -- normal text
+    NormalFloat = { fg = c.snow_storm.origin, bg = global_bg }, -- Normal text in floating windows.
+    FloatBorder = { fg = c.polar_night.brightest, bg = global_bg }, -- Borders of floating windows
     Pmenu = { fg = c.snow_storm.origin, bg = c.polar_night.bright }, -- Popup menu: normal item.
     PmenuSel = { fg = c.snow_storm.origin, bg = c.polar_night.brighter }, -- Popup menu: selected item.
     PmenuSbar = { fg = c.snow_storm.origin, bg = c.polar_night.brighter }, -- Popup menu: scrollbar.
@@ -48,12 +49,12 @@ function defaluts.highlights()
     CurSearch = { link = "IncSearch" },
     SpecialKey = { fg = c.polar_night.brightest }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 
-    SpellBad = { fg = c.aurora.red, bg = c.polar_night.origin, sp = c.aurora.red, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-    SpellCap = { fg = c.aurora.yellow, bg = c.polar_night.origin, sp = c.aurora.yellow, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-    SpellLocal = { fg = c.snow_storm.brighter, bg = c.polar_night.origin, sp = c.snow_storm.brighter, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+    SpellBad = { fg = c.aurora.red, bg = global_bg, sp = c.aurora.red, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+    SpellCap = { fg = c.aurora.yellow, bg = global_bg, sp = c.aurora.yellow, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+    SpellLocal = { fg = c.snow_storm.brighter, bg = global_bg, sp = c.snow_storm.brighter, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare = {
       fg = c.snow_storm.brightest,
-      bg = c.polar_night.origin,
+      bg = global_bg,
       sp = c.snow_storm.brightest,
       undercurl = true,
     }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.

@@ -24,6 +24,7 @@ local defaults = {
   },
   colorblind = {
     enable = false,
+    preserve_background = false,
     severity = {
       protan = 0,
       deutan = 0,
