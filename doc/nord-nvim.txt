@@ -142,6 +142,7 @@ Nord.nvim will use the default options, unless you call `setup`.
       -- simulation mode has not been implemented yet.
       colorblind = {
         enable = false,
+        preserve_background = false,
         severity = {
           protan = 0.0,
           deutan = 0.0,
