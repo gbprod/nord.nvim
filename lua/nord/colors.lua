@@ -35,13 +35,13 @@ colors.default_bg = "#2E3440" -- nord0
 function colors.daltonize(severity)
   local daltonize = require("nord.utils.colorblind").daltonize
 
-   for group, color in pairs(defaults) do
-     if type(color) == "table" then
-       for sub_group, sub_color in pairs(color) do
-         colors.palette[group][sub_group] = daltonize(sub_color, severity)
-       end
-     end
-   end
+  for group, color in pairs(defaults) do
+    if type(color) == "table" then
+      for sub_group, sub_color in pairs(color) do
+        colors.palette[group][sub_group] = daltonize(sub_color, severity)
+      end
+    end
+  end
 end
 
 return colors
