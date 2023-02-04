@@ -35,34 +35,13 @@ colors.default_bg = "#2E3440" -- nord0
 function colors.daltonize(severity)
   local daltonize = require("nord.utils.colorblind").daltonize
 
-  colors.palette = {
-    polar_night = {
-      origin = daltonize(defaults.polar_night.origin, severity),
-      bright = daltonize(defaults.polar_night.bright, severity),
-      brighter = daltonize(defaults.polar_night.brighter, severity),
-      brightest = daltonize(defaults.polar_night.brightest, severity),
-      light = daltonize(defaults.polar_night.light, severity),
-    },
-    snow_storm = {
-      origin = daltonize(defaults.snow_storm.origin, severity),
-      brighter = daltonize(defaults.snow_storm.brighter, severity),
-      brightest = daltonize(defaults.snow_storm.brightest, severity),
-    },
-    frost = {
-      polar_water = daltonize(defaults.frost.polar_water, severity),
-      ice = daltonize(defaults.frost.ice, severity),
-      artic_water = daltonize(defaults.frost.artic_water, severity),
-      artic_ocean = daltonize(defaults.frost.artic_ocean, severity),
-    },
-    aurora = {
-      red = daltonize(defaults.aurora.red, severity),
-      orange = daltonize(defaults.aurora.orange, severity),
-      yellow = daltonize(defaults.aurora.yellow, severity),
-      green = daltonize(defaults.aurora.green, severity),
-      purple = daltonize(defaults.aurora.purple, severity),
-    },
-    none = "NONE",
-  }
+  for group, color in pairs(defaults) do
+    if type(color) == "table" then
+      for sub_group, sub_color in pairs(color) do
+        colors.palette[group][sub_group] = daltonize(sub_color, severity)
+      end
+    end
+  end
 end
 
 return colors
