@@ -4,13 +4,13 @@
 Table of Contents                                *nord-nvim-table-of-contents*
 
 1. 🖌️ nord.nvim                             |nord-nvim-🖌️-nord.nvim|
-  - ✨ Features                                      |nord-nvim-✨-features|
-  - ⚡️ Requirements                        |nord-nvim-⚡️-requirements|
-  - 📦 Installation                            |nord-nvim-📦-installation|
-  - 🚀 Usage                                          |nord-nvim-🚀-usage|
-  - ⚙️ Configuration                      |nord-nvim-⚙️-configuration|
-  - 🤝 Integrations                            |nord-nvim-🤝-integrations|
-  - 🎉 Credits                                      |nord-nvim-🎉-credits|
+  - ✨ Features                    |nord-nvim-🖌️-nord.nvim-✨-features|
+  - ⚡️ Requirements      |nord-nvim-🖌️-nord.nvim-⚡️-requirements|
+  - 📦 Installation          |nord-nvim-🖌️-nord.nvim-📦-installation|
+  - 🚀 Usage                        |nord-nvim-🖌️-nord.nvim-🚀-usage|
+  - ⚙️ Configuration    |nord-nvim-🖌️-nord.nvim-⚙️-configuration|
+  - 🤝 Integrations          |nord-nvim-🖌️-nord.nvim-🤝-integrations|
+  - 🎉 Credits                    |nord-nvim-🖌️-nord.nvim-🎉-credits|
 
 ==============================================================================
 1. 🖌️ nord.nvim                             *nord-nvim-🖌️-nord.nvim*
@@ -27,17 +27,8 @@ issues**
   "Arctic, north-bluish clean and elegant" - arcticicestudio
 
 
-<img
-src='https://user-images.githubusercontent.com/3751019/205092735-ced8ba05-d15d-4751-9a88-17cefef5ec52.png'
-title=''/> <img
-src='https://user-images.githubusercontent.com/3751019/205092727-a266d2c8-35fd-4272-b90f-c1f063591e58.png'
-title=''/> <img
-src='https://user-images.githubusercontent.com/3751019/205092730-9874369f-d045-47c6-8b07-5371cf344223.png'
-title=''/> <img
-src='https://user-images.githubusercontent.com/3751019/205092733-3aebea83-c5a8-4e96-ab2e-a4646cc9e3ea.png'
-title=''/>
 
-✨ FEATURES                                          *nord-nvim-✨-features*
+✨ FEATURES                        *nord-nvim-🖌️-nord.nvim-✨-features*
 
 
 - supports TreeSitter and LSP
@@ -66,53 +57,50 @@ PLUGIN SUPPORT ~
 - Aerial <https://github.com/stevearc/aerial.nvim>
 - Notify <https://github.com/rcarriga/nvim-notify>
 
-
 You’re preferred plugin is missing ? Open an issue or, even better, open a
 pull request 😉.
 
-⚡️ REQUIREMENTS                            *nord-nvim-⚡️-requirements*
+
+⚡️ REQUIREMENTS          *nord-nvim-🖌️-nord.nvim-⚡️-requirements*
 
 
 - Neovim >= 0.8.0
 
 
-📦 INSTALLATION                                *nord-nvim-📦-installation*
+📦 INSTALLATION              *nord-nvim-🖌️-nord.nvim-📦-installation*
 
 Install the theme with your preferred package manager:
 
 packer <https://github.com/wbthomason/packer.nvim>
 
->
+>lua
     use 'gbprod/nord.nvim'
 <
 
 
-🚀 USAGE                                              *nord-nvim-🚀-usage*
+🚀 USAGE                            *nord-nvim-🖌️-nord.nvim-🚀-usage*
 
 Enable the colorscheme:
 
->
+>vim
     " Vim Script
     colorscheme nord
 <
 
-
->
+>lua
     -- Lua
     vim.cmd[[colorscheme nord]]
 <
 
 
-⚙️ CONFIGURATION                          *nord-nvim-⚙️-configuration*
+⚙️ CONFIGURATION        *nord-nvim-🖌️-nord.nvim-⚙️-configuration*
 
 
   ❗️ configuration needs to be set **BEFORE** loading the color scheme with
   `colorscheme nord`
-
-
 Nord.nvim will use the default options, unless you call `setup`.
 
->
+>lua
     require("nord").setup({
       -- your configuration comes here
       -- or leave it empty to use the default settings
@@ -157,14 +145,14 @@ Nord.nvim will use the default options, unless you call `setup`.
 <
 
 
-🤝 INTEGRATIONS                                *nord-nvim-🤝-integrations*
+🤝 INTEGRATIONS              *nord-nvim-🖌️-nord.nvim-🤝-integrations*
 
 nvim-lualine/lualine.nvim ~
 
 To enable the `nord` theme for `Lualine`, simply specify it in your lualine
 settings:
 
->
+>lua
     require('lualine').setup {
       options = {
         -- ... your lualine config
@@ -174,12 +162,11 @@ settings:
     }
 <
 
-
 akinsho/bufferline.nvim ~
 
 To use this theme for `bufferline`, add this to your config:
 
->
+>lua
     require("bufferline").setup({
         options = {
             separator_style = "thin",
@@ -189,7 +176,7 @@ To use this theme for `bufferline`, add this to your config:
 <
 
 
-🎉 CREDITS                                          *nord-nvim-🎉-credits*
+🎉 CREDITS                        *nord-nvim-🖌️-nord.nvim-🎉-credits*
 
 
 - shaunsingh/nord.nvim <https://github.com/shaunsingh/nord.nvim>: pretty good
@@ -202,6 +189,13 @@ To use this theme for `bufferline`, add this to your config:
     of code inspiration.
 - EdenEast/nightfox.nvim <https://github.com/EdenEast/nightfox.nvim#colorblind>: For daltonization algorithm
 
+==============================================================================
+2. Links                                                     *nord-nvim-links*
+
+1. *2022-12-01-142011_1277x703_scrot*: https://user-images.githubusercontent.com/3751019/205092735-ced8ba05-d15d-4751-9a88-17cefef5ec52.png
+2. *2022-12-01-142157_1270x700_scrot*: https://user-images.githubusercontent.com/3751019/205092727-a266d2c8-35fd-4272-b90f-c1f063591e58.png
+3. *2022-12-01-142111_1276x700_scrot*: https://user-images.githubusercontent.com/3751019/205092730-9874369f-d045-47c6-8b07-5371cf344223.png
+4. *2022-12-01-142044_1265x634_scrot*: https://user-images.githubusercontent.com/3751019/205092733-3aebea83-c5a8-4e96-ab2e-a4646cc9e3ea.png
 
 Generated by panvimdoc <https://github.com/kdheepak/panvimdoc>
 
