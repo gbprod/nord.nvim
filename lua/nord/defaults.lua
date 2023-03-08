@@ -42,13 +42,11 @@ function defaluts.highlights()
     PmenuSbar = { fg = c.snow_storm.origin, bg = c.polar_night.brighter }, -- Popup menu: scrollbar.
     PmenuThumb = { fg = c.frost.ice, bg = c.polar_night.brightest }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.snow_storm.origin }, -- |hit-enter| prompt and yes/no questions
-
     QuickFixLine = { fg = c.snow_storm.origin, bg = c.none, reverse = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search = { fg = c.frost.ice, bg = c.none, reverse = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch = { fg = c.snow_storm.brightest, bg = c.frost.ice }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { link = "IncSearch" },
     SpecialKey = { fg = c.polar_night.brightest }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-
     SpellBad = { fg = c.aurora.red, bg = global_bg, sp = c.aurora.red, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap = { fg = c.aurora.yellow, bg = global_bg, sp = c.aurora.yellow, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal = { fg = c.snow_storm.brighter, bg = global_bg, sp = c.snow_storm.brighter, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
@@ -58,16 +56,12 @@ function defaluts.highlights()
       sp = c.snow_storm.brightest,
       undercurl = true,
     }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-
     StatusLine = { fg = c.frost.ice, bg = c.polar_night.brighter }, -- status line of current window
     StatusLineNC = { fg = c.snow_storm.origin, bg = c.polar_night.brightest }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-
     TabLine = { fg = c.snow_storm.origin, bg = c.fg_gutter }, -- tab pages line, not active tab page label
     TabLineFill = { fg = c.snow_storm.origin, bg = c.polar_night.bright }, -- tab pages line, where there are no labels
     TabLineSel = { fg = c.frost.ice, bg = c.polar_night.brightest }, -- tab pages line, active tab page label
-
     Title = { fg = c.snow_storm.origin, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
-
     Visual = { fg = c.none, bg = c.polar_night.brighter }, -- Visual mode selection
     VisualNOS = { fg = c.none, bg = c.polar_night.brighter }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg = { fg = c.polar_night.origin, bg = c.aurora.yellow }, -- warning messages
@@ -79,7 +73,9 @@ function defaluts.highlights()
     DiffChange = utils.make_diff(c.aurora.yellow), --  diff mode: Changed line
     DiffDelete = utils.make_diff(c.aurora.red), -- diff mode: Deleted line
     DiffText = utils.make_diff(c.frost.artic_water), -- diff mode: Changed text within a changed line
-
+    diffAdded = { link = "DiffAdd" },
+    diffChanged = { link = "DiffChange" },
+    diffRemoved = { link = "DiffDelete" },
     healthError = { fg = c.aurora.red },
     healthSuccess = { fg = c.aurora.green },
     healthWarning = { fg = c.aurora.yellow },

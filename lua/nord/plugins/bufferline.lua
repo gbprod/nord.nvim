@@ -12,7 +12,6 @@ function bufferline.highlights()
   return {
     -- Barbar
     BufferTabpageFill = { bg = global_bg, fg = c.polar_night.origin },
-
     BufferCurrent = current_hi,
     BufferCurrentIndex = current_hi,
     BufferCurrentMod = vim.tbl_extend("force", { bg = c.polar_night.brighter, fg = c.aurora.yellow }, config.modified),
@@ -26,7 +25,6 @@ function bufferline.highlights()
     BufferCurrentINFO = vim.tbl_extend("force", current_hi, { fg = c.frost.ice }),
     BufferCurrentWARN = vim.tbl_extend("force", current_hi, { fg = c.aurora.yellow }),
     BufferCurrentERROR = vim.tbl_extend("force", current_hi, { fg = c.aurora.red }),
-
     BufferVisible = { bg = c.polar_night.bright },
     BufferVisibleIndex = { bg = c.polar_night.bright },
     BufferVisibleMod = vim.tbl_extend("force", { bg = c.polar_night.bright, fg = c.aurora.yellow }, config.modified),
@@ -36,7 +34,6 @@ function bufferline.highlights()
     BufferVisibleINFO = { bg = c.polar_night.bright, fg = c.frost.ice },
     BufferVisibleWARN = { bg = c.polar_night.bright, fg = c.aurora.yellow },
     BufferVisibleERROR = { bg = c.polar_night.bright, fg = c.aurora.red },
-
     BufferInactive = { bg = global_bg, fg = c.polar_night.light },
     BufferInactiveIndex = { bg = global_bg, fg = c.polar_night.light },
     BufferInactiveMod = vim.tbl_extend(
@@ -48,10 +45,8 @@ function bufferline.highlights()
     BufferInactiveTarget = { bg = global_bg, fg = c.aurora.red, bold = true },
     BufferInactiveHINT = { bg = global_bg, fg = utils.darken(c.frost.artic_water, 0.4) },
     BufferInactiveINFO = { bg = global_bg, fg = utils.darken(c.frost.ice, 0.4) },
-
     BufferInactiveWARN = { bg = global_bg, fg = utils.darken(c.aurora.yellow, 0.4) },
     BufferInactiveERROR = { bg = global_bg, fg = utils.darken(c.aurora.red, 0.4) },
-
     BufferTabpages = { bg = global_bg, fg = c.none },
     BufferTabpage = { bg = global_bg, fg = c.border_highlight },
   }
@@ -65,14 +60,12 @@ function bufferline.akinsho()
   return {
     fill = { bg = global_bg, fg = c.polar_night.light },
     background = { bg = global_bg, fg = c.polar_night.light },
-
     numbers = { bg = global_bg },
     close_button = { bg = global_bg },
     separator = { bg = global_bg, fg = c.polar_night.origin },
     duplicate = { bg = global_bg },
     modified = vim.tbl_extend("force", { bg = global_bg, fg = utils.darken(c.aurora.yellow, 0.4) }, config.modified),
     pick = { bg = global_bg, bold = true, italic = false },
-
     diagnostic = { bg = global_bg },
     hint = { bg = global_bg, fg = c.frost.artic_water },
     hint_diagnostic = { bg = global_bg, fg = c.frost.artic_water },
@@ -82,7 +75,6 @@ function bufferline.akinsho()
     warning_diagnostic = { bg = global_bg, fg = c.aurora.yellow },
     error_diagnostic = { bg = global_bg, fg = c.aurora.red },
     error = { bg = global_bg, fg = c.aurora.red },
-
     buffer_selected = current_hi,
     numbers_selected = current_hi,
     close_button_selected = current_hi,
@@ -91,7 +83,6 @@ function bufferline.akinsho()
     duplicate_selected = current_hi,
     pick_selected = vim.tbl_extend("force", current_hi, { bold = true }),
     indicator_selected = { fg = c.frost.artic_water, bg = c.polar_night.brighter },
-
     diagnostic_selected = current_hi,
     hint_selected = vim.tbl_extend("force", current_hi, { fg = c.frost.artic_water }),
     hint_diagnostic_selected = vim.tbl_extend("force", current_hi, { fg = c.frost.artic_water }),
@@ -101,7 +92,6 @@ function bufferline.akinsho()
     warning_diagnostic_selected = vim.tbl_extend("force", current_hi, { fg = c.aurora.yellow }),
     error_selected = vim.tbl_extend("force", current_hi, { fg = c.aurora.red }),
     error_diagnostic_selected = vim.tbl_extend("force", current_hi, { fg = c.aurora.red }),
-
     buffer_visible = { bg = c.polar_night.bright },
     numbers_visible = { bg = c.polar_night.bright },
     close_button_visible = { bg = c.polar_night.bright },
@@ -109,7 +99,6 @@ function bufferline.akinsho()
     separator_visible = { bg = global_bg, fg = c.polar_night.origin },
     duplicate_visible = { bg = c.polar_night.bright },
     pick_visible = { bg = c.polar_night.bright, bold = true, italic = false },
-
     diagnostic_visible = { bg = c.polar_night.bright },
     hint_visible = { bg = c.polar_night.bright, fg = c.frost.artic_water },
     hint_diagnostic_visible = { bg = c.polar_night.bright, fg = c.frost.artic_water },
@@ -119,7 +108,6 @@ function bufferline.akinsho()
     warning_diagnostic_visible = { bg = c.polar_night.bright, fg = c.aurora.yellow },
     error_visible = { bg = c.polar_night.bright, fg = c.aurora.red },
     error_diagnostic_visible = { bg = c.polar_night.bright, fg = c.aurora.red },
-
     tab = { fg = c.snow_storm.origin, bg = global_bg },
     tab_selected = { fg = c.snow_storm.origin, bg = c.polar_night.brighter },
     tab_separator = { fg = c.polar_night.origin, bg = global_bg },
@@ -127,4 +115,5 @@ function bufferline.akinsho()
     tab_close = { fg = c.snow_storm.origin, bg = global_bg },
   }
 end
+
 return bufferline
