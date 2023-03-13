@@ -44,14 +44,14 @@ function treesitter.highlights()
     -- Keywords
     ["@keyword"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  various keywords
     ["@keyword.function"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.functions), --  keywords that define a function (e.g. `func` in Go, `def` in Python)
-    ["@keyword.operator"] = { fg = c.frost.artic_water }, --  operators that are English words (e.g. `and` / `or`)
-    ["@keyword.return"] = { fg = c.frost.artic_water }, --  keywords like `return` and `yield`
-    ["@conditional"] = { fg = c.frost.artic_water }, --  keywords related to conditionals (e.g. `if` / `else`)
-    ["@repeat"] = { fg = c.frost.artic_water }, --  keywords related to loops (e.g. `for` / `while`)
-    ["@debug"] = { fg = c.snow_storm.origin }, --  keywords related to debugging
-    ["@label"] = { fg = c.frost.polar_water }, --  GOTO and other labels (e.g. `label:` in C)
-    ["@include"] = { fg = c.frost.artic_water }, --  keywords for including modules (e.g. `import` / `from` in Python)
-    ["@exception"] = { fg = c.frost.artic_water }, --  keywords related to exceptions (e.g. `throw` / `catch`)
+    ["@keyword.operator"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  operators that are English words (e.g. `and` / `or`)
+    ["@keyword.return"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords like `return` and `yield`
+    ["@conditional"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords related to conditionals (e.g. `if` / `else`)
+    ["@repeat"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords related to loops (e.g. `for` / `while`)
+    ["@debug"] = vim.tbl_extend("force", { fg = c.snow_storm.origin }, options.styles.keywords), --  keywords related to debugging
+    ["@label"] = vim.tbl_extend("force", { fg = c.frost.polar_water }, options.styles.keywords), --  GOTO and other labels (e.g. `label:` in C)
+    ["@include"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords for including modules (e.g. `import` / `from` in Python)
+    ["@exception"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords related to exceptions (e.g. `throw` / `catch`)
 
     -- Types
     ["@type"] = { fg = c.frost.polar_water }, --  type or class definitions and annotations
