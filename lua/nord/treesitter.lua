@@ -114,7 +114,7 @@ function treesitter.highlights()
     ["@lsp.type.class"] = { link = "@type" },
     ["@lsp.type.comment"] = { link = "@comment" },
     ["@lsp.type.enum"] = { link = "@type" },
-    ["@lsp.type.enumMenber"] = { link = "@constant" },
+    ["@lsp.type.enumMember"] = { link = "@constant" },
     ["@lsp.type.field"] = { link = "@field" },
     ["@lsp.type.function"] = { link = "@function" },
     ["@lsp.type.interface"] = { link = "@type" },
