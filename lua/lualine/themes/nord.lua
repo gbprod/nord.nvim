@@ -10,7 +10,7 @@ nord.normal = {
 }
 
 nord.insert = {
-  a = { fg = c.polar_night.bright, bg = c.snow_storm.brightest },
+  a = { fg = c.polar_night.bright, bg = c.snow_storm.origin },
 }
 
 nord.visual = {
