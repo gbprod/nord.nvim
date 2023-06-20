@@ -31,7 +31,8 @@ function nord.load(opts)
     require("nord.plugins.motion").highlights(),
     require("nord.plugins.notify").highlights(),
     require("nord.plugins.picker").highlights(),
-    require("nord.plugins.ui").highlights()
+    require("nord.plugins.ui").highlights(),
+    require("nord.plugins.diffview").highlights()
   )
 end
 
