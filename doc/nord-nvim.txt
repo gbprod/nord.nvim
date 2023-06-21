@@ -30,14 +30,12 @@ issues**
 
 ✨ FEATURES                        *nord-nvim-🖌️-nord.nvim-✨-features*
 
-
 - supports TreeSitter and LSP
 - vim terminal colors
 - **lualine** theme
 
 
 PLUGIN SUPPORT ~
-
 
 - TreeSitter <https://github.com/nvim-treesitter/nvim-treesitter>
 - |LSP Diagnostics|
@@ -62,7 +60,6 @@ pull request 😉.
 
 
 ⚡️ REQUIREMENTS          *nord-nvim-🖌️-nord.nvim-⚡️-requirements*
-
 
 - Neovim >= 0.8.0
 
@@ -177,7 +174,6 @@ To use this theme for `bufferline`, add this to your config:
 
 
 🎉 CREDITS                        *nord-nvim-🖌️-nord.nvim-🎉-credits*
-
 
 - shaunsingh/nord.nvim <https://github.com/shaunsingh/nord.nvim>: pretty good
     Nord theme for Neovim but too far from original and requires too much
