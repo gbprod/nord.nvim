@@ -13,7 +13,7 @@ end
 function utils.make_diff(color)
   local options = require("nord.config").options
 
-  return { fg = color, bg = c.polar_night.brighter, reverse = options.diff.mode ~= "fg" }
+  return { fg = color, bg = c.polar_night.bright, reverse = options.diff.mode ~= "fg" }
 end
 
 function utils.make_error(color)
