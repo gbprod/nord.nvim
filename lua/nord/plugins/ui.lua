@@ -107,6 +107,15 @@ function ui.highlights()
     rainbowcol5 = { fg = c.frost.polar_water },
     rainbowcol6 = { fg = c.aurora.purple },
     rainbowcol7 = { fg = c.snow_storm.origin },
+
+    --"HiPhish/rainbow-delimiters.nvim",
+    RainbowDelimiterRed = { fg = c.aurora.red },
+    RainbowDelimiterYellow = { fg = c.aurora.yellow },
+    RainbowDelimiterBlue = { fg = c.frost.artic_ocean },
+    RainbowDelimiterOrange = { fg = c.aurora.green },
+    RainbowDelimiterGreen = { fg = c.aurora.orange },
+    RainbowDelimiterCyan = { fg = c.frost.ice },
+    RainbowDelimiterViolet = { fg = c.aurora.purple },
   }
 end
 
