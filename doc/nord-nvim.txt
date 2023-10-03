@@ -75,6 +75,25 @@ packer <https://github.com/wbthomason/packer.nvim>
     use 'gbprod/nord.nvim'
 <
 
+lazy <https://github.com/folke/lazy.nvim>
+
+>lua
+    require("lazy").setup({
+      {
+        "gbprod/nord.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+          require("nord").setup({})
+          vim.cmd.colorscheme("nord")
+        end,
+      },
+      install = {
+        colorscheme = { "nord" },
+      },
+    });
+<
+
 
 🚀 USAGE                            *nord-nvim-🖌️-nord.nvim-🚀-usage*
 
@@ -87,7 +106,7 @@ Enable the colorscheme:
 
 >lua
     -- Lua
-    vim.cmd[[colorscheme nord]]
+    vim.cmd.colorscheme("nord")
 <
 
 
