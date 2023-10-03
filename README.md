@@ -57,6 +57,25 @@ Install the theme with your preferred package manager:
 use 'gbprod/nord.nvim'
 ```
 
+[lazy](https://github.com/folke/lazy.nvim)
+
+```lua
+require("lazy").setup({
+  {
+    "gbprod/nord.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nord").setup({})
+      vim.cmd.colorscheme("nord")
+    end,
+  },
+  install = {
+    colorscheme = { "nord" },
+  },
+});
+```
+
 ## 🚀 Usage
 
 Enable the colorscheme:
@@ -68,7 +87,7 @@ colorscheme nord
 
 ```lua
 -- Lua
-vim.cmd[[colorscheme nord]]
+vim.cmd.colorscheme("nord")
 ```
 
 ## ⚙️ Configuration
