@@ -32,7 +32,8 @@ function nord.load(opts)
     require("nord.plugins.notify").highlights(),
     require("nord.plugins.picker").highlights(),
     require("nord.plugins.ui").highlights(),
-    require("nord.plugins.diffview").highlights()
+    require("nord.plugins.diffview").highlights(),
+    require("nord.plugins.neogit").highlights()
   )
 end
 
