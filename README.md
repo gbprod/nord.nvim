@@ -101,6 +101,8 @@ require("nord").setup({
   borders = true, -- Enable the border between verticaly split windows visible
   errors = { mode = "bg" }, -- Display mode for errors and diagnostics
                             -- values : [bg|fg|none]
+  search = { theme = "vim" }, -- theme for highlighting search results
+                              -- values : [vim|vscode]
   styles = {
     -- Style to be applied to different syntax groups
     -- Value is any valid attr-list value for `:help nvim_set_hl`
