@@ -116,6 +116,9 @@ function ui.highlights()
     RainbowDelimiterGreen = { fg = c.aurora.orange },
     RainbowDelimiterCyan = { fg = c.frost.ice },
     RainbowDelimiterViolet = { fg = c.aurora.purple },
+
+    -- tzachar/highlight-undo.nvim
+    HighlightUndo = { link = "Search" },
   }
 end
 
