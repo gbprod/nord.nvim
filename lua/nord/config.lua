@@ -4,6 +4,7 @@ local defaults = {
   transparent = false, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
   diff = { mode = "bg" }, -- [bg|fg]
+  search = { theme = "vim" }, -- [vim|vscode]
   borders = true,
   errors = { mode = "bg" }, -- [bg|fg|none]
   -- Value is any valid attr-list value for `:help nvim_set_hl`
