@@ -4,8 +4,6 @@ Neovim theme using the [Nord palette](https://www.nordtheme.com/) that tries to
 be as close as possible to the [official vim theme](https://github.com/arcticicestudio/nord-vim/)
 and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-studio-code).
 
-**This colorscheme still under developement, please, keep calm and report issues**
-
 > "Arctic, north-bluish clean and elegant" - arcticicestudio
 
 ![2022-12-01-142011_1277x703_scrot](https://user-images.githubusercontent.com/3751019/205092735-ced8ba05-d15d-4751-9a88-17cefef5ec52.png)
@@ -13,7 +11,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 ![2022-12-01-142111_1276x700_scrot](https://user-images.githubusercontent.com/3751019/205092730-9874369f-d045-47c6-8b07-5371cf344223.png)
 ![2022-12-01-142044_1265x634_scrot](https://user-images.githubusercontent.com/3751019/205092733-3aebea83-c5a8-4e96-ab2e-a4646cc9e3ea.png)
 
-## ✨ Features {#features}
+## ✨ Features
 
 - supports TreeSitter and LSP
 - vim terminal colors
@@ -52,12 +50,6 @@ request 😉.
 ## 📦 Installation
 
 Install the theme with your preferred package manager:
-
-[packer](https://github.com/wbthomason/packer.nvim)
-
-```lua
-use 'gbprod/nord.nvim'
-```
 
 [lazy](https://github.com/folke/lazy.nvim)
 
