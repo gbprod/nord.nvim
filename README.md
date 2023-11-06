@@ -39,6 +39,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [RainbowDelimiter](https://github.com/HiPhish/rainbow-delimiters.nvim)
 - [Neogit](https://github.com/NeogitOrg/neogit)
 - [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim)
+- [Illuminate](https://github.com/RRethy/vim-illuminate)
 
 You're preferred plugin is missing ? Open an issue or, even better, open a pull
 request 😉.
