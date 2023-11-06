@@ -119,6 +119,10 @@ function ui.highlights()
 
     -- tzachar/highlight-undo.nvim
     HighlightUndo = { link = "Search" },
+
+    IlluminatedWordText = { link = "Search" },
+    IlluminatedWordRead = { link = "Search" },
+    IlluminatedWordWrite = { link = "Search" },
   }
 end
 
