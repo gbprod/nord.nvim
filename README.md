@@ -40,6 +40,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [Neogit](https://github.com/NeogitOrg/neogit)
 - [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim)
 - [Illuminate](https://github.com/RRethy/vim-illuminate)
+- [Codeium](https://github.com/Exafunction/codeium.vim)
 
 You're preferred plugin is missing ? Open an issue or, even better, open a pull
 request 😉.
