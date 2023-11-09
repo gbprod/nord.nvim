@@ -15,6 +15,8 @@ function cmp.highlights()
     CmpItemKindMethod = { fg = c.aurora.purple },
     CmpItemKindSnippet = { fg = c.aurora.green },
     CmpItemKindText = { fg = c.snow_storm.origin },
+
+    CodeiumSuggestion = { fg = c.polar_night.light },
   }
 end
 
