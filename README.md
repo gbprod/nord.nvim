@@ -41,6 +41,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim)
 - [Illuminate](https://github.com/RRethy/vim-illuminate)
 - [Codeium](https://github.com/Exafunction/codeium.vim)
+- [Flash.nvim](https://github.com/folke/flash.nvim)
 
 You're preferred plugin is missing ? Open an issue or, even better, open a pull
 request 😉.
