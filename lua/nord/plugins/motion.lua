@@ -1,7 +1,6 @@
 local motion = {}
 
 local c = require("nord.colors").palette
-local options = require("nord.config").options
 
 function motion.highlights()
   return {
@@ -10,13 +9,9 @@ function motion.highlights()
     LeapLabelSecondary = { fg = c.polar_night.bright, bg = c.aurora.purple, bold = true, nocombine = true },
     LeapLabelSelected = { fg = c.polar_night.bright, bg = c.aurora.yellow, bold = true, nocombine = true },
 
-    FlashLabel = { fg = c.polar_night.bright, bg = c.aurora.green, bold = true },
-    -- FlashBackdrop 	Comment 	backdrop
-    -- FlashMatch 	Search 	search matches
-    -- FlashCurrent 	IncSearch 	current match
-    -- FlashPrompt 	MsgArea 	prompt
-    -- FlashPromptIcon 	Special 	prompt icon
-    -- FlashCursor 	Cursor 	cursor
+    FlashMatch = { bg = c.polar_night.bright, fg = c.snow_storm.origin },
+    FlashCurrent = { bg = c.polar_night.brighter, fg = c.snow_storm.origin, bold = true },
+    FlashLabel = { bg = c.aurora.green, fg = c.polar_night.origin, bold = true },
   }
 end
 
