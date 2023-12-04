@@ -76,6 +76,8 @@ function defaluts.highlights()
     healthError = { fg = c.aurora.red },
     healthSuccess = { fg = c.aurora.green },
     healthWarning = { fg = c.aurora.yellow },
+    WinBar = { bg = c.polar_night.origin },
+    WinBarNC = { bg = c.polar_night.origin },
   }
 end
 
