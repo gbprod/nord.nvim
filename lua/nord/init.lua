@@ -35,6 +35,8 @@ function nord.load(opts)
     require("nord.plugins.diffview").highlights(),
     require("nord.plugins.neogit").highlights()
   )
+
+  vim.g.colors_name = "nord"
 end
 
 nord.setup = config.setup
