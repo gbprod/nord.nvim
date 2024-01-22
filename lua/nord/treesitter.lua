@@ -91,6 +91,9 @@ function treesitter.highlights()
     ["@text.danger"] = { fg = c.aurora.red }, --  danger/error notes
     ["@text.diff.add"] = { link = "DiffAdd" }, --  added text (for diff files)
     ["@text.diff.delete"] = { link = "DiffDelete" }, --  deleted text (for diff files)
+    ["@diff.diff"] = { link = "DiffAdd" }, --  added text (for diff files)
+    ["@diff.minus"] = { link = "DiffDelete" }, --  deleted text (for diff files)
+    ["@diff.delta"] = { link = "DiffChange" },
 
     -- Tags
     ["@tag"] = { fg = c.frost.artic_water }, --  XML tag names
@@ -106,7 +109,7 @@ function treesitter.highlights()
 
     -- Language specific
     ["@constant.git_rebase"] = { fg = c.frost.polar_water },
-    ["@field.yaml"] = { fg = c.frost.polar_water },
+    ["@property.yaml"] = { fg = c.frost.polar_water },
     ["@text.phpdoc"] = { fg = c.polar_night.light },
     ["@attribute.phpdoc"] = { fg = c.frost.artic_water },
     ["@module.php"] = { fg = c.snow_storm.origin },
