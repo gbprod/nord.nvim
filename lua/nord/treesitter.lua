@@ -109,6 +109,7 @@ function treesitter.highlights()
     ["@field.yaml"] = { fg = c.frost.polar_water },
     ["@text.phpdoc"] = { fg = c.polar_night.light },
     ["@attribute.phpdoc"] = { fg = c.frost.artic_water },
+    ["@module.php"] = { fg = c.snow_storm.origin },
 
     -- LSP Semantic Token Groups
     ["@lsp.type.class"] = { link = "@type" },
