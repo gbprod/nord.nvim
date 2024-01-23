@@ -9,6 +9,7 @@ function lsp.highlights()
     -- LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
     -- LspReferenceWrite = { bg = c.fg_gutter }, -- used for highlighting "write" references
 
+    DiagnosticOk = { fg = c.aurora.green }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticError = { fg = c.aurora.red }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticWarn = { fg = c.aurora.yellow }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticInfo = { fg = c.frost.ice }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
