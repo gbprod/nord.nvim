@@ -11,56 +11,72 @@ function treesitter.highlights()
     ["@comment"] = vim.tbl_extend("force", { fg = c.polar_night.light }, options.styles.comments), --  line and block comments
     ["@error"] = utils.make_error(c.aurora.red), --  syntax/parser errors
     -- ["@none"]     --  completely disable the highlight
-    ["@preproc"] = { fg = c.frost.artic_water }, --  various preprocessor directives & shebangs
-    ["@define"] = { fg = c.frost.artic_water }, --  preprocessor definition directives
+    ["@keyword.directive"] = { fg = c.frost.artic_water }, --  various preprocessor directives & shebangs
+    ["@preproc"] = { link = "@keyword.directive" }, -- @deprecated
+    ["@keyword.directive.define"] = { fg = c.frost.artic_water }, --  preprocessor definition directives
+    ["@define"] = { link = "@keyword.directive.define" }, -- @deprecated
     ["@operator"] = { fg = c.frost.artic_water }, --  symbolic operators (e.g. `+` / `*`)
 
     -- Punctuation
     ["@punctuation.delimiter"] = { fg = c.snow_storm.brightest }, --  delimiters (e.g. `;` / `.` / `,`)
     ["@punctuation.bracket"] = { fg = c.frost.ice }, --  brackets (e.g. `()` / `{}` / `[]`)
-    ["@punctuation.special"] = { fg = c.frost.artic_water }, --  special symbols (e.g. `{}` in string interpolation)
+    ["@markup.list"] = { fg = c.frost.artic_water }, --  special symbols (e.g. `{}` in string interpolation)
+    ["@punctuation.special"] = { link = "@markup.list" }, -- @deprecated
 
     -- Literals
     ["@string"] = { fg = c.aurora.green }, --  string literals
-    ["@string.regex"] = { fg = c.aurora.yellow }, --  regular expressions
+    ["@string.regexp"] = { fg = c.aurora.yellow }, --  regular expressions
+    ["@string.regex"] = { link = "@string.regexp" }, -- @deprecated
     ["@string.escape"] = { fg = c.aurora.yellow }, --  escape sequences
-    ["@string.special"] = { fg = c.aurora.yellow }, --  other special strings (e.g. dates)
+    ["@markup.link.label"] = { fg = c.aurora.yellow }, --  other special strings (e.g. dates)
+    ["@string.special"] = { link = "@markup.link.label" }, -- @deprecated
     ["@character"] = { fg = c.aurora.green }, --  character literals
     ["@character.special"] = { fg = c.aurora.yellow }, --  special characters (e.g. wildcards)
     ["@boolean"] = { fg = c.frost.artic_water }, --  boolean literals
     ["@number"] = { fg = c.aurora.purple }, --  numeric literals
-    ["@float"] = { fg = c.aurora.purple }, --  floating-point number literals
+    ["@number.float"] = { fg = c.aurora.purple }, --  floating-point number literals
+    ["@float"] = { link = "@number.float" }, -- @deprecated
 
     -- Functions
     ["@function"] = vim.tbl_extend("force", { fg = c.frost.ice }, options.styles.functions), --  function definitions
     ["@function.builtin"] = { fg = c.frost.ice }, --  built-in functions
     ["@function.call"] = { fg = c.frost.ice }, --  function calls
     ["@function.macro"] = { fg = c.frost.artic_water }, --  preprocessor macros
-    ["@method"] = { fg = c.frost.ice }, --  method definitions
-    ["@method.call"] = { fg = c.frost.ice }, --  method calls
+    ["@function.method"] = { fg = c.frost.ice }, --  method definitions
+    ["@method"] = { link = "@function.method" }, -- @deprecated
+    ["@function.method.call"] = { fg = c.frost.ice }, --  method calls
+    ["@method.call"] = { link = "@function.method.call" }, -- @deprecated
     ["@constructor"] = { fg = c.frost.ice }, --  constructor calls and definitions
-    ["@parameter"] = { fg = c.frost.ice }, --  parameters of a function
+    ["@variable.parameter"] = { fg = c.frost.ice }, --  parameters of a function
+    ["@parameter"] = { link = "@parameter" }, -- @deprecated
 
     -- Keywords
     ["@keyword"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  various keywords
     ["@keyword.function"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.functions), --  keywords that define a function (e.g. `func` in Go, `def` in Python)
     ["@keyword.operator"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  operators that are English words (e.g. `and` / `or`)
     ["@keyword.return"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords like `return` and `yield`
-    ["@conditional"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords related to conditionals (e.g. `if` / `else`)
-    ["@repeat"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords related to loops (e.g. `for` / `while`)
-    ["@debug"] = vim.tbl_extend("force", { fg = c.snow_storm.origin }, options.styles.keywords), --  keywords related to debugging
+    ["@keyword.conditional"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords related to conditionals (e.g. `if` / `else`)
+    ["@conditional"] = { link = "@keyword.conditional" }, -- @deprecated
+    ["@keyword.repeat"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords related to loops (e.g. `for` / `while`)
+    ["@repeat"] = { link = "@keyword.repeat" }, -- @deprecated
+    ["@keyword.debug"] = vim.tbl_extend("force", { fg = c.snow_storm.origin }, options.styles.keywords), --  keywords related to debugging
+    ["@debug"] = { link = "@keyword.debug" }, -- @deprecated
     ["@label"] = vim.tbl_extend("force", { fg = c.frost.polar_water }, options.styles.keywords), --  GOTO and other labels (e.g. `label:` in C)
-    ["@include"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords for including modules (e.g. `import` / `from` in Python)
-    ["@exception"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords related to exceptions (e.g. `throw` / `catch`)
+    ["@keyword.import"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords for including modules (e.g. `import` / `from` in Python)
+    ["@include"] = { link = "@keyword.import" }, -- @deprecated
+    ["@keyword.exception"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  keywords related to exceptions (e.g. `throw` / `catch`)
+    ["@exception"] = { link = "@keyword.exception" }, -- @deprecated
 
     -- Types
     ["@type"] = { fg = c.frost.polar_water }, --  type or class definitions and annotations
     ["@type.builtin"] = { fg = c.frost.artic_water }, --  built-in types
     ["@type.definition"] = { fg = c.frost.polar_water }, --  type definitions (e.g. `typedef` in C)
     ["@type.qualifier"] = { fg = c.frost.artic_water }, --  type qualifiers (e.g. `const`)
-    ["@storageclass"] = { fg = c.frost.artic_water }, --  visibility/life-time modifiers
+    ["@keyword.storage"] = { fg = c.frost.artic_water }, --  visibility/life-time modifiers
+    ["@storageclass"] = { link = "@keyword.storage" }, -- @deprecated
     ["@attribute"] = { fg = c.snow_storm.origin }, --  attribute annotations (e.g. Python decorators)
-    ["@field"] = { fg = c.snow_storm.origin }, --  object and struct fields
+    ["@variable.member"] = { fg = c.snow_storm.origin }, --  object and struct fields
+    ["@field"] = { link = "@field" }, -- @deprecated
     ["@property"] = { fg = c.snow_storm.origin }, --  similar to `@field`
 
     -- Identifiers
@@ -69,26 +85,43 @@ function treesitter.highlights()
     ["@constant"] = { fg = c.snow_storm.origin }, --  constant identifiers
     ["@constant.builtin"] = { fg = c.frost.artic_water }, --  built-in constant values
     ["@constant.macro"] = { fg = c.frost.artic_water }, --  constants defined by the preprocessor
-    ["@namespace"] = { fg = c.snow_storm.origin }, --  modules or namespaces
-    ["@symbol"] = { fg = c.snow_storm.origin }, --  symbols or atoms
+    ["@module"] = { fg = c.snow_storm.origin }, --  modules or namespaces
+    ["@namespace"] = { link = "@module" }, -- @deprecated
+    ["@string.special.symbol"] = { fg = c.snow_storm.origin }, --  symbols or atoms
+    ["@symbol"] = { link = "@string.special.symbol" }, -- @deprecated
 
     -- Text
-    ["@text"] = { fg = c.snow_storm.origin }, --  non-structured text
-    ["@text.strong"] = { bold = true }, --  bold text
-    ["@text.emphasis"] = { italic = true }, --  text with emphasis
-    ["@text.underline"] = { underline = true }, --  underlined text
-    ["@text.strike"] = { strikethrough = true }, --  strikethrough text
-    ["@text.title"] = { fg = c.frost.ice }, --  text that is part of a title
-    ["@text.literal"] = { fg = c.frost.polar_water }, --  literal or verbatim text
-    ["@text.uri"] = { fg = c.aurora.green, underline = true, sp = c.aurora.green }, --  URIs (e.g. hyperlinks)
-    ["@text.math"] = { fg = c.frost.polar_water }, --  math environments (e.g. `$ ... $` in LaTeX)
-    ["@text.environment"] = { fg = c.frost.polar_water }, --  text environments of markup languages
-    ["@text.environment.name"] = { fg = c.frost.artic_water }, --  text indicating the type of an environment
-    ["@text.reference"] = { fg = c.frost.polar_water }, --  text references, footnotes, citations, etc.
-    ["@text.todo"] = { fg = c.frost.artic_water }, --  todo notes
-    ["@text.note"] = { fg = c.frost.artic_water }, --  info notes
-    ["@text.warning"] = { fg = c.aurora.yellow }, --  warning notes
-    ["@text.danger"] = { fg = c.aurora.red }, --  danger/error notes
+    ["@text"] = { fg = c.snow_storm.origin }, -- @deprecated
+    ["@markup.strong"] = { bold = true }, --  bold text
+    ["@text.strong"] = { link = "@markup.strong" }, -- @deprecated
+    ["@markup.italic"] = { italic = true }, --  text with emphasis
+    ["@text.emphasis"] = { link = "@markup.italic" }, -- @deprecated
+    ["@markup.underline"] = { underline = true }, --  underlined text
+    ["@text.underline"] = { link = "@markup.underline" }, -- @deprecated
+    ["@markup.strikethrough"] = { strikethrough = true }, --  strikethrough text
+    ["@text.strike"] = { link = "@markup.strikethrough" }, -- @deprecated
+    ["@markup.heading"] = { fg = c.frost.ice }, --  text that is part of a title
+    ["@text.title"] = { link = "@markup.heading" }, -- @deprecated
+    ["@markup.raw"] = { fg = c.frost.polar_water }, --  literal or verbatim text
+    ["@text.literal"] = { link = "@markup.raw" }, -- @deprecated
+    ["@markup.link.url"] = { fg = c.aurora.green, underline = true, sp = c.aurora.green }, --  URIs (e.g. hyperlinks)
+    ["@text.uri"] = { link = "@markup.link.url" }, -- @deprecated
+    ["@markup.math"] = { fg = c.frost.polar_water }, --  math environments (e.g. `$ ... $` in LaTeX)
+    ["@text.math"] = { link = "@markup.math" }, -- @deprecated
+    ["@markup.environment"] = { fg = c.frost.polar_water }, --  text environments of markup languages
+    ["@text.environment"] = { link = "@markup.environment" }, -- @deprecated
+    ["@markup.environment.name"] = { fg = c.frost.artic_water }, --  text indicating the type of an environment
+    ["@text.environment.name"] = { link = "@markup.environment.name" }, -- @deprecated
+    ["@markup.link"] = { fg = c.frost.polar_water }, --  text references, footnotes, citations, etc.
+    ["@text.reference"] = { link = "@markup.link" }, -- @deprecated
+    ["@comment.todo"] = { fg = c.frost.artic_water }, --  todo notes
+    ["@text.todo"] = { link = "@comment.todo" }, -- @deprecated
+    ["@comment.note"] = { fg = c.frost.artic_water }, --  info notes
+    ["@text.note"] = { link = "@comment.note" }, -- @deprecated
+    ["@comment.warning"] = { fg = c.aurora.yellow }, --  warning notes
+    ["@text.warning"] = { link = "@comment.warning" }, -- @deprecated
+    ["@comment.error"] = { fg = c.aurora.red }, --  danger/error notes
+    ["@text.danger"] = { link = "@comment.error" }, -- @deprecated
     ["@text.diff.add"] = { link = "DiffAdd" }, --  added text (for diff files)
     ["@text.diff.delete"] = { link = "DiffDelete" }, --  deleted text (for diff files)
     ["@diff.diff"] = { link = "DiffAdd" }, --  added text (for diff files)
@@ -112,7 +145,6 @@ function treesitter.highlights()
     ["@property.yaml"] = { fg = c.frost.polar_water },
     ["@text.phpdoc"] = { fg = c.polar_night.light },
     ["@attribute.phpdoc"] = { fg = c.frost.artic_water },
-    ["@module.php"] = { fg = c.snow_storm.origin },
     ["@variable.parameter.php"] = { fg = c.frost.polar_water },
 
     -- LSP Semantic Token Groups
