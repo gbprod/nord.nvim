@@ -124,7 +124,7 @@ function treesitter.highlights()
     ["@text.danger"] = { link = "@comment.error" }, -- @deprecated
     ["@text.diff.add"] = { link = "DiffAdd" }, --  added text (for diff files)
     ["@text.diff.delete"] = { link = "DiffDelete" }, --  deleted text (for diff files)
-    ["@diff.diff"] = { link = "DiffAdd" }, --  added text (for diff files)
+    ["@diff.plus"] = { link = "DiffAdd" }, --  added text (for diff files)
     ["@diff.minus"] = { link = "DiffDelete" }, --  deleted text (for diff files)
     ["@diff.delta"] = { link = "DiffChange" },
 
