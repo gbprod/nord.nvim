@@ -100,7 +100,7 @@ function treesitter.highlights()
     ["@text.underline"] = { link = "@markup.underline" }, -- @deprecated
     ["@markup.strikethrough"] = { strikethrough = true }, --  strikethrough text
     ["@text.strike"] = { link = "@markup.strikethrough" }, -- @deprecated
-    ["@markup.heading"] = { fg = c.frost.ice }, --  text that is part of a title
+    ["@markup.heading"] = { fg = c.frost.ice, bold = true }, --  text that is part of a title
     ["@text.title"] = { link = "@markup.heading" }, -- @deprecated
     ["@markup.raw"] = { fg = c.frost.polar_water }, --  literal or verbatim text
     ["@text.literal"] = { link = "@markup.raw" }, -- @deprecated
