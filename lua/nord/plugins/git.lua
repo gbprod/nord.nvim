@@ -19,7 +19,7 @@ function git.highlights()
     GitSignsDelete = { fg = c.aurora.red },
     GitSignsDeleteNr = { fg = c.aurora.red },
     GitSignsDeleteLn = { fg = c.aurora.red },
-    GitSignsCurrentLineBlame = { fg = c.polar_night.brightest, bold = true },
+    GitSignsCurrentLineBlame = { fg = c.polar_night.light },
   }
 end
 
