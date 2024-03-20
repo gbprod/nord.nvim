@@ -42,6 +42,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [Illuminate](https://github.com/RRethy/vim-illuminate)
 - [Codeium](https://github.com/Exafunction/codeium.vim)
 - [Flash.nvim](https://github.com/folke/flash.nvim)
+- [Glance](https://github.com/dnlhc/glance.nvim)
 
 You're preferred plugin is missing ? Open an issue or, even better, open a pull
 request 😉.
@@ -155,6 +156,26 @@ require('lualine').setup {
     -- ... your lualine config
   }
 }
+```
+
+</details>
+
+<details>
+<summary><b>dnlhc/glance.nvim</b></summary>
+Nord provide default options for `glance.nvim` to have a better integration:
+
+```lua
+require("lazy").setup({
+    {
+      "dnlhc/glance.nvim",
+      opts = require("nord.plugins.glance").make_opts({
+        folds = {
+          folded = false,
+        },
+      }),
+    }
+  }
+)
 ```
 
 </details>
