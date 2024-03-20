@@ -48,7 +48,7 @@ function treesitter.highlights()
     ["@method.call"] = { link = "@function.method.call" }, -- @deprecated
     ["@constructor"] = { fg = c.frost.ice }, --  constructor calls and definitions
     ["@variable.parameter"] = { fg = c.frost.ice }, --  parameters of a function
-    ["@parameter"] = { link = "@parameter" }, -- @deprecated
+    ["@parameter"] = { link = "@variable.parameter" }, -- @deprecated
 
     -- Keywords
     ["@keyword"] = vim.tbl_extend("force", { fg = c.frost.artic_water }, options.styles.keywords), --  various keywords
@@ -145,7 +145,6 @@ function treesitter.highlights()
     ["@property.yaml"] = { fg = c.frost.polar_water },
     ["@text.phpdoc"] = { fg = c.polar_night.light },
     ["@attribute.phpdoc"] = { fg = c.frost.artic_water },
-    ["@variable.parameter.php"] = { fg = c.frost.polar_water },
 
     -- LSP Semantic Token Groups
     ["@lsp.type.class"] = { link = "@type" },

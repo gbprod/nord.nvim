@@ -10,8 +10,8 @@ function motion.highlights()
     LeapLabelSelected = { fg = c.polar_night.bright, bg = c.aurora.yellow, bold = true, nocombine = true },
 
     FlashMatch = { bg = c.polar_night.bright, fg = c.snow_storm.origin },
-    FlashCurrent = { bg = c.polar_night.brighter, fg = c.snow_storm.origin, bold = true },
-    FlashLabel = { bg = c.aurora.green, fg = c.polar_night.origin, bold = true },
+    FlashCurrent = { bg = c.polar_night.brighter, fg = c.snow_storm.origin, underline = true },
+    FlashLabel = { bg = c.aurora.yellow, fg = c.polar_night.origin, bold = true },
   }
 end
 
