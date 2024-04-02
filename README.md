@@ -44,7 +44,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [Flash.nvim](https://github.com/folke/flash.nvim)
 - [Glance](https://github.com/dnlhc/glance.nvim)
 
-You're preferred plugin is missing ? Open an issue or, even better, open a pull
+Your preferred plugin is missing ? Open an issue or, even better, open a pull
 request 😉.
 
 ## ⚡️ Requirements
