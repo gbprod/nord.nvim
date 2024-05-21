@@ -26,7 +26,7 @@ function filetree.highlights()
     NeoTreeDimText = { fg = c.polar_night.brightest },
     NeoTreeDirectoryIcon = { fg = c.frost.artic_water },
     NeoTreeDirectoryName = { fg = c.snow_storm.origin },
-    NeoTreeDotfile = { fg = c.polar_night.brightest },
+    NeoTreeDotfile = { fg = c.polar_night.light },
     NeoTreeFadeText1 = { fg = c.polar_night.brightest },
     NeoTreeFadeText2 = { fg = c.polar_night.brighter },
     NeoTreeFileIcon = { fg = c.snow_storm.origin },
