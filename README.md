@@ -133,7 +133,7 @@ require("nord").setup({
       deutan = 0.0,
       tritan = 0.0,
     },
-  }
+  },
 
   --- You can override specific highlights to use other groups or a hex color
   --- function will be called with all highlights and the colorScheme table
