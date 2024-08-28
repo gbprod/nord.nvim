@@ -8,6 +8,8 @@ function nord.load(opts)
     require("nord.config").extend(opts)
   end
 
+  vim.o.termguicolors = true
+
   if config.options.colorblind.enable then
     require("nord.colors").daltonize(config.options.colorblind.severity)
   end
