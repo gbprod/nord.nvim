@@ -20,6 +20,19 @@ function git.highlights()
     GitSignsDeleteNr = { fg = c.aurora.red },
     GitSignsDeleteLn = { fg = c.aurora.red },
     GitSignsCurrentLineBlame = { fg = c.polar_night.light },
+
+    -- isakbm/gitgraph.nvim
+    GitGraphHash = { fg = c.aurora.purple },
+    GitGraphTimestamp = { fg = c.frost.ice },
+    GitGraphAuthor = { fg = c.aurora.green },
+    GitGraphBranchName = { fg = c.aurora.red },
+    GitGraphBranchTag = { fg = c.aurora.yellow },
+    GitGraphBranchMsg = { fg = c.snow_storm.origin },
+    GitGraphBranch1 = { fg = c.frost.artic_ocean },
+    GitGraphBranch2 = { fg = c.aurora.green },
+    GitGraphBranch3 = { fg = c.aurora.red },
+    GitGraphBranch4 = { fg = c.aurora.yellow },
+    GitGraphBranch5 = { fg = c.frost.ice },
   }
 end
 
