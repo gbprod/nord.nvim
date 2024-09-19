@@ -22,6 +22,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
 - [LSP Trouble](https://github.com/folke/lsp-trouble.nvim)
+- [Git Graph](https://github.com/isakbm/gitgraph.nvim)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
 - [Git Gutter](https://github.com/airblade/vim-gitgutter)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
