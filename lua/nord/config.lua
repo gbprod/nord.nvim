@@ -1,12 +1,12 @@
 local config = {}
 
 local defaults = {
-  transparent = false, -- Enable this to disable setting the background color
-  terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-  diff = { mode = "bg" }, -- [bg|fg]
+  transparent = false,        -- Enable this to disable setting the background color
+  terminal_colors = true,     -- Configure the colors used when opening a `:terminal` in Neovim
+  diff = { mode = "bg" },     -- [bg|fg]
   search = { theme = "vim" }, -- [vim|vscode]
   borders = true,
-  errors = { mode = "bg" }, -- [bg|fg|none]
+  errors = { mode = "bg" },   -- [bg|fg|none]
   -- Value is any valid attr-list value for `:help nvim_set_hl`
   styles = {
     comments = { italic = true },
@@ -30,7 +30,10 @@ local defaults = {
       tritan = 0,
     },
   },
-  --- You can override specific highlights to use other groups or a hex color
+  -- You can override colors
+  on_colors = function(colors) end,
+
+  -- You can override specific highlights to use other groups or a hex color
   on_highlights = function(highlights, colors) end,
 }
 
