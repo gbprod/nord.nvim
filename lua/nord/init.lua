@@ -14,7 +14,7 @@ function nord.load(opts)
     require("nord.colors").daltonize(config.options.colorblind.severity)
   end
 
-  require('nord.config').options.on_colors(require('nord.colors').palette)
+  require("nord.config").options.on_colors(require("nord.colors").palette)
 
   vim.cmd([[ highlight clear ]])
 
