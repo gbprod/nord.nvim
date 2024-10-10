@@ -45,6 +45,7 @@ and [the official vscode theme](https://github.com/arcticicestudio/nord-visual-s
 - [Flash.nvim](https://github.com/folke/flash.nvim)
 - [Glance](https://github.com/dnlhc/glance.nvim)
 - [Markview](https://github.com/OXY2DEV/markview.nvim)
+- [Toggleterm](https://github.com/akinsho/toggleterm.nvim)
 
 Your preferred plugin is missing ? Open an issue or, even better, open a pull
 request 😉.
@@ -196,6 +197,20 @@ require("bufferline").setup({
     },
     highlights = require("nord.plugins.bufferline").akinsho(),
 })
+```
+
+</details>
+
+<details>
+<summary>akinsho/toggleterm.nvim</summary>
+Nord provide default options for `toggleterm.nvim` to have a better integration:
+
+```lua
+require("toggleterm").setup(
+    require("nord.plugins.toggleterm").make_opts({
+      -- your custom options
+    })
+)
 ```
 
 </details>
