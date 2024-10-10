@@ -61,6 +61,7 @@ PLUGIN SUPPORT ~
 - Flash.nvim <https://github.com/folke/flash.nvim>
 - Glance <https://github.com/dnlhc/glance.nvim>
 - Markview <https://github.com/OXY2DEV/markview.nvim>
+- Toggleterm <https://github.com/akinsho/toggleterm.nvim>
 
 Your preferred plugin is missing ? Open an issue or, even better, open a pull
 request 😉.
@@ -213,6 +214,19 @@ To use this theme for `bufferline`, add this to your config:
         },
         highlights = require("nord.plugins.bufferline").akinsho(),
     })
+<
+
+akinsho/toggleterm.nvim ~
+
+Nord provide default options for `toggleterm.nvim` to have a better
+integration:
+
+>lua
+    require("toggleterm").setup(
+        require("nord.plugins.toggleterm").make_opts({
+          -- your custom options
+        })
+    )
 <
 
 
