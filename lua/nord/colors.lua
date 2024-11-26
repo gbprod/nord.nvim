@@ -1,5 +1,38 @@
 local colors = {}
 
+---@class Nord.Palette.PolarNight
+---@field origin string nord 0
+---@field bright string nord 1
+---@field brighter string nord 2
+---@field brightest string  nord 3
+---@field light string out of palette
+
+---@class Nord.Palette.SnowStorm
+---@field origin string  nord 4
+---@field brighter string nord 5
+---@field brightest string  nord 6
+
+---@class Nord.Palette.Frost
+---@field polar_water string nord 7
+---@field ice string nord 8
+---@field artic_water string nord 9
+---@field artic_ocean string nord 10
+
+---@class Nord.Palette.Aurora
+---@field red string nord 11
+---@field orange string nord 12
+---@field yellow string nord 13
+---@field green string nord 14
+---@field purple string nord 15
+
+---@class Nord.Palette
+---@field polar_night Nord.Palette.PolarNight
+---@field snow_storm Nord.Palette.SnowStorm
+---@field frost Nord.Palette.Frost
+---@field aurora Nord.Palette.Aurora
+---@field none string
+
+---@type Nord.Palette
 local defaults = {
   polar_night = {
     origin = "#2E3440", -- nord0
