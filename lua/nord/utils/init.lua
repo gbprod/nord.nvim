@@ -1,9 +1,31 @@
 local utils = {}
 local c = require("nord.colors").palette
 
-function utils.load(...)
-  local highlights = vim.tbl_extend("force", ...)
+local function get_cachable_config()
   local options = require("nord.config").options
+  local cached_options = vim.deepcopy(options)
+  cached_options.on_highlights = nil
+  cached_options.on_colors = nil
+  return {
+    opts = cached_options,
+    colors = c,
+  }
+end
+
+function utils.load(func)
+  local options = require("nord.config").options
+  local cacheable_config = get_cachable_config()
+  local ok, tbl = pcall(utils.load_from_file, "config")
+  local highlights = nil
+  if ok and tbl and vim.deep_equal(tbl.config, cacheable_config) then
+    highlights = tbl.highlights
+  else
+    highlights = vim.tbl_extend("force", func())
+    local ok, err = pcall(utils.save_to_file, "config", { config = cacheable_config, highlights = highlights })
+    if not ok then
+      vim.notify("Failed to save cache: " .. err, vim.log.levels.WARN)
+    end
+  end
   options.on_highlights(highlights, c)
   for group, hl in pairs(highlights) do
     vim.api.nvim_set_hl(0, group, hl)
@@ -68,6 +90,42 @@ function utils.make_global_bg(transparent)
   end
 
   return c.polar_night.origin
+end
+
+local function cache_filename(filename)
+  return vim.fn.stdpath("cache") .. "/nord-" .. filename .. ".json"
+end
+
+function utils.save_to_file(filename, object)
+  filename = cache_filename(filename)
+  local file, err = io.open(filename, "w")
+  if not file then
+    error("Failed to open file for writing: " .. err)
+  end
+  local success, encoded = pcall(vim.json.encode, object)
+  if not success then
+    error("Failed to encode cache: " .. encoded)
+  end
+  file:write(encoded)
+  file:close()
+end
+
+function utils.load_from_file(filename)
+  filename = cache_filename(filename)
+  local file, err = io.open(filename, "r")
+  if not file then
+    error("Failed to open file for reading: " .. err)
+  end
+  local content = file:read("*a")
+  file:close()
+  local success, decoded = pcall(vim.json.decode, content, {
+    object = true,
+    array = true,
+  })
+  if not success then
+    error("Failed to decode file content: " .. decoded)
+  end
+  return decoded
 end
 
 return utils
