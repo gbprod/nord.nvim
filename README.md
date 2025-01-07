@@ -139,10 +139,12 @@ require("nord").setup({
   },
 
   -- Override the default colors
+  ---@param colors Nord.Palette
   on_colors = function(colors) end,
 
   --- You can override specific highlights to use other groups or a hex color
   --- function will be called with all highlights and the colorScheme table
+  ---@param colors Nord.Palette
   on_highlights = function(highlights, colors) end,
 })
 ```
