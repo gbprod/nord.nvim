@@ -62,8 +62,8 @@ function base.highlights()
     markdownIdDeclaration = { fg = c.frost.polar_water },
     markdownUrl = { fg = c.snow_storm.origin },
 
-    debugPC = { bg = c.frost.artic_water }, -- used for highlighting the current line in terminal-debug
-    debugBreakpoint = { bg = c.frost.artic_ocean, fg = c.frost.artic_water }, -- used for breakpoint colors in terminal-debug
+    debugPC = { bg = utils.darken(c.frost.artic_water, 0.3) }, -- used for highlighting the current line in terminal-debug
+    debugBreakpoint = { bg = utils.darken(c.frost.artic_ocean, 0.1), fg = c.frost.artic_water }, -- used for breakpoint colors in terminal-debug
   }
 end
 

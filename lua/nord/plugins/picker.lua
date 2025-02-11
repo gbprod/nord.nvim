@@ -22,6 +22,7 @@ function picker.highlights()
     FzfLuaTabTitle = { fg = c.frost.artic_water },
     FzfLuaTabMarker = { fg = c.aurora.yellow },
     FzfLuaLiveSym = { fg = c.aurora.red },
+    FzfLuaLivePrompt = { fg = c.aurora.yellow },
   }
 end
 
