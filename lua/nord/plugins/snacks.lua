@@ -11,6 +11,10 @@ function snacks.highlights()
     SnacksPickerBufFlags = { link = "Comment" },
     SnacksPickerKeymapRhs = { link = "Comment" },
     SnacksPickerGitStatus = { link = "Comment" },
+    SnacksPickerPathHidden = { link = "Comment" },
+    SnacksPickerPathIgnored = { link = "Comment" },
+    SnacksPickerGitStatusIgnored = { link = "Comment" },
+    SnacksPickerGitStatusUntracked = { link = "Comment" },
   }
 end
 
