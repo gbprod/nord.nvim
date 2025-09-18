@@ -1,5 +1,6 @@
 local c = require("nord.colors").palette
 local utils = require("nord.utils")
+local config = require("nord.config").options.styles
 
 local nord = {}
 
@@ -30,5 +31,11 @@ nord.inactive = {
   b = { fg = c.snow_storm.origin, bg = utils.make_global_bg() },
   c = { fg = c.snow_storm.origin, bg = c.polar_night.bright },
 }
+
+if config.lualine_bold then
+  for _, mode in pairs(nord) do
+    mode.a.gui = "bold"
+  end
+end
 
 return nord

@@ -125,6 +125,8 @@ require("nord").setup({
       current = {},
       modified = { italic = true },
     },
+
+    lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
   },
 
   -- colorblind mode
