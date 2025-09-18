@@ -145,7 +145,7 @@ Nord.nvim will use the default options, unless you call `setup`.
           current = {},
           modified = { italic = true },
         },
-
+    
         lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
       },
     
