@@ -76,7 +76,7 @@ function treesitter.highlights()
     ["@storageclass"] = { link = "@keyword.storage" }, -- @deprecated
     ["@attribute"] = { fg = c.snow_storm.origin }, --  attribute annotations (e.g. Python decorators)
     ["@variable.member"] = { fg = c.snow_storm.origin }, --  object and struct fields
-    ["@field"] = { link = "@field" }, -- @deprecated
+    ["@field"] = { link = "@variable.member" }, -- @deprecated
     ["@property"] = { fg = c.snow_storm.origin }, --  similar to `@field`
 
     -- Identifiers
