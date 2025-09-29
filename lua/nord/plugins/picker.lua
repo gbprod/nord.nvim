@@ -10,7 +10,7 @@ function picker.highlights()
     TelescopePromptCounter = { fg = c.polar_night.light },
     TelescopeMatching = { fg = c.frost.ice, bold = true },
 
-    FzfLuaBorder = { fg = c.polar_night.light, bg = utils.make_global_bg() },
+    FzfLuaBorder = { fg = c.polar_night.light, bg = utils.make_global_bg(true) },
     FzfLuaTitle = { fg = c.snow_storm.origin, bold = true },
     FzfLuaHeaderBind = { fg = c.frost.ice },
     FzfLuaHeaderText = { fg = c.frost.artic_ocean },
