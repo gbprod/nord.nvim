@@ -43,7 +43,8 @@ function nord.load(opts)
     require("nord.plugins.markview").highlights(),
     require("nord.plugins.snacks").highlights(),
     require("nord.plugins.dap").highlights(),
-    require("nord.plugins.vimwiki").highlights()
+    require("nord.plugins.vimwiki").highlights(),
+    require("nord.plugins.render-markdown").highlights()
   )
 
   vim.g.colors_name = "nord"
