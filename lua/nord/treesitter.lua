@@ -21,6 +21,8 @@ function treesitter.highlights()
     ["@punctuation.delimiter"] = { fg = c.snow_storm.brightest }, --  delimiters (e.g. `;` / `.` / `,`)
     ["@punctuation.bracket"] = { fg = c.frost.ice }, --  brackets (e.g. `()` / `{}` / `[]`)
     ["@markup.list"] = { fg = c.frost.artic_water }, --  special symbols (e.g. `{}` in string interpolation)
+    ["@markup.list.unchecked"] = { fg = c.frost.ice }, --  unchecked list
+    ["@markup.list.checked"] = { fg = c.frost.polar_water }, --  checked list
     ["@punctuation.special"] = { link = "@markup.list" }, -- @deprecated
 
     -- Literals
@@ -101,11 +103,18 @@ function treesitter.highlights()
     ["@markup.strikethrough"] = { strikethrough = true }, --  strikethrough text
     ["@text.strike"] = { link = "@markup.strikethrough" }, -- @deprecated
     ["@markup.heading"] = { fg = c.frost.ice, bold = true }, --  text that is part of a title
+    ["@markup.heading.1.markdown"] = { fg = c.frost.artic_water, bold = true }, --  markdown h1
+    ["@markup.heading.2.markdown"] = { fg = c.aurora.purple, bold = true }, --  markdown h2
+    ["@markup.heading.3.markdown"] = { fg = c.aurora.green, bold = true }, --  markdown h3
+    ["@markup.heading.4.markdown"] = { fg = c.aurora.yellow, bold = true }, --  markdown h4
+    ["@markup.heading.5.markdown"] = { fg = c.aurora.orange, bold = true }, --  markdown h5
+    ["@markup.heading.6.markdown"] = { fg = c.aurora.red, bold = true }, --  markdown h6
     ["@text.title"] = { link = "@markup.heading" }, -- @deprecated
     ["@markup.raw"] = { fg = c.frost.polar_water }, --  literal or verbatim text
     ["@text.literal"] = { link = "@markup.raw" }, -- @deprecated
     ["@markup.link.url"] = { fg = c.aurora.green, underline = true, sp = c.aurora.green }, --  URIs (e.g. hyperlinks)
     ["@text.uri"] = { link = "@markup.link.url" }, -- @deprecated
+    ["@markup.link.label.markdown_inline"] = { fg = c.aurora.green }, --  markdown link
     ["@markup.math"] = { fg = c.frost.polar_water }, --  math environments (e.g. `$ ... $` in LaTeX)
     ["@text.math"] = { link = "@markup.math" }, -- @deprecated
     ["@markup.environment"] = { fg = c.frost.polar_water }, --  text environments of markup languages
