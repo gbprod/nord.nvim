@@ -9,6 +9,9 @@ function ui.highlights()
     WhichKeyGroup = { fg = c.frost.artic_water },
     WhichKeyDesc = { fg = c.snow_storm.origin },
     WhichKeyFloat = { bg = c.polar_night.bright },
+    WhichKeyIconOrange = { fg = c.aurora.orange },
+    WhichKeyIconPurple = { fg = c.aurora.purple },
+    WhichKeyIconGrey = { fg = c.polar_night.brightest },
 
     -- SmiteshP/nvim-navic
     NavicIconsFile = { link = "@include" },
