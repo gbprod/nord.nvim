@@ -14,40 +14,43 @@ function nord.load(opts)
     require("nord.colors").daltonize(config.options.colorblind.severity)
   end
 
+  require("nord.colors").apply_style()
   require("nord.config").options.on_colors(require("nord.colors").palette)
 
   vim.cmd([[ highlight clear ]])
 
   if config.options.terminal_colors then
     require("nord.terminal").apply()
+    require("nord.terminal").apply_light_adjustments()
   end
 
   utils.load(
-    require("nord.defaults").highlights(),
-    require("nord.lsp").highlights(),
-    require("nord.syntax").highlights(),
+    utils.apply_light_mode(require("nord.defaults").highlights()),
+    utils.apply_light_mode(require("nord.lsp").highlights()),
+    utils.apply_light_mode(require("nord.syntax").highlights()),
     require("nord.terminal").highlights(),
-    require("nord.treesitter").highlights(),
-    require("nord.plugins.bufferline").highlights(),
-    require("nord.plugins.completion").highlights(),
-    require("nord.plugins.filetree").highlights(),
-    require("nord.plugins.git").highlights(),
-    require("nord.plugins.motion").highlights(),
-    require("nord.plugins.notify").highlights(),
-    require("nord.plugins.picker").highlights(),
-    require("nord.plugins.ui").highlights(),
-    require("nord.plugins.diffview").highlights(),
-    require("nord.plugins.neogit").highlights(),
-    require("nord.plugins.glance").highlights(),
-    require("nord.plugins.mini").highlights(),
-    require("nord.plugins.markview").highlights(),
-    require("nord.plugins.snacks").highlights(),
-    require("nord.plugins.dap").highlights(),
-    require("nord.plugins.vimwiki").highlights(),
-    require("nord.plugins.render-markdown").highlights()
+    utils.apply_light_mode(require("nord.treesitter").highlights()),
+    utils.apply_light_mode(require("nord.plugins.bufferline").highlights()),
+    utils.apply_light_mode(require("nord.plugins.completion").highlights()),
+    utils.apply_light_mode(require("nord.plugins.filetree").highlights()),
+    utils.apply_light_mode(require("nord.plugins.git").highlights()),
+    utils.apply_light_mode(require("nord.plugins.motion").highlights()),
+    utils.apply_light_mode(require("nord.plugins.notify").highlights()),
+    utils.apply_light_mode(require("nord.plugins.picker").highlights()),
+    utils.apply_light_mode(require("nord.plugins.ui").highlights()),
+    utils.apply_light_mode(require("nord.plugins.diffview").highlights()),
+    utils.apply_light_mode(require("nord.plugins.neogit").highlights()),
+    utils.apply_light_mode(require("nord.plugins.glance").highlights()),
+    utils.apply_light_mode(require("nord.plugins.mini").highlights()),
+    utils.apply_light_mode(require("nord.plugins.markview").highlights()),
+    utils.apply_light_mode(require("nord.plugins.snacks").highlights()),
+    utils.apply_light_mode(require("nord.plugins.dap").highlights()),
+    utils.apply_light_mode(require("nord.plugins.vimwiki").highlights()),
+    utils.apply_light_mode(require("nord.plugins.render-markdown").highlights())
   )
 
-  vim.g.colors_name = "nord"
+  local style = config.options.style == "light" and "-light" or ""
+  vim.g.colors_name = "nord" .. style
 end
 
 nord.setup = config.setup

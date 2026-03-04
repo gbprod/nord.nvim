@@ -1,6 +1,7 @@
 local terminal = {}
 
 local c = require("nord.colors").palette
+local light_c = require("nord.colors").light_palette
 
 function terminal.apply()
   -- dark
@@ -31,9 +32,17 @@ function terminal.apply()
   vim.g.terminal_color_14 = c.frost.polar_water
 end
 
+function terminal.apply_light_adjustments()
+  if require("nord.config").options.style == "light" then
+    vim.g.terminal_color_0 = light_c.snow_storm.origin
+    vim.g.terminal_color_8 = light_c.snow_storm.brighter
+    vim.g.terminal_color_7 = light_c.polar_night.bright
+    vim.g.terminal_color_15 = light_c.polar_night.origin
+  end
+end
+
 function terminal.highlights()
   return {
-
     TermCursor = { fg = c.snow_storm.origin, bg = c.none, reverse = true }, -- cursor in a focused terminal
     TermCursorNC = { fg = c.polar_night.brightest, bg = c.none, reverse = true }, -- cursor in an unfocused terminal
   }

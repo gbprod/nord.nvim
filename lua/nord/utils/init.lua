@@ -70,4 +70,17 @@ function utils.make_global_bg(transparent)
   return c.polar_night.origin
 end
 
+function utils.apply_light_mode(highlights)
+  local colors = require("nord.colors")
+  if require("nord.config").options.style ~= "light" then
+    return highlights
+  end
+
+  for group, highlight in pairs(highlights) do
+    highlights[group] = colors.invert_highlight_for_light(highlight)
+  end
+
+  return highlights
+end
+
 return utils

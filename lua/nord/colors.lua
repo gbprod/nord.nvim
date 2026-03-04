@@ -62,7 +62,33 @@ local defaults = {
   none = "NONE",
 }
 
+---@type Nord.Palette
+local light_palette = {
+  polar_night = {
+    origin = "#ECEFF4",
+    bright = "#E5E9F0",
+    brighter = "#D8DEE9",
+    brightest = "#D8DEE9",
+    light = "#D8DEE9",
+  },
+  snow_storm = {
+    origin = "#434C5E",
+    brighter = "#3B4252",
+    brightest = "#2E3440",
+  },
+  frost = vim.tbl_extend("force", {}, defaults.frost),
+  aurora = {
+    red = "#BF616A",
+    orange = "#D08770",
+    yellow = "#EBCB8B",
+    green = "#A3BE8C",
+    purple = "#B48EAD",
+  },
+  none = "NONE",
+}
+
 colors.palette = defaults
+colors.light_palette = light_palette
 colors.default_bg = "#2E3440" -- nord0
 
 function colors.daltonize(severity)
@@ -75,6 +101,52 @@ function colors.daltonize(severity)
       end
     end
   end
+end
+
+function colors.apply_style()
+  if require("nord.config").options.style == "light" then
+    colors.default_bg = light_palette.polar_night.origin
+
+    -- Use darkened aurora colors for light background
+    colors.palette.aurora = {
+      red = "#A3253F",
+      orange = "#B85C3C",
+      yellow = "#B39A00",
+      green = "#6B7C3A",
+      purple = "#8B4E6C",
+    }
+  end
+end
+
+function colors.invert_highlight_for_light(highlight)
+  if require("nord.config").options.style ~= "light" then
+    return highlight
+  end
+
+  local inverted = vim.tbl_extend("force", {}, highlight)
+
+  -- Bidirectional color mapping for light mode
+  local color_map = {
+    -- Polar Night to Snow Storm
+    ["#2E3440"] = "#ECEFF4", -- polar_night.origin -> snow_storm.brightest
+    ["#3B4252"] = "#E5E9F0", -- polar_night.bright -> snow_storm.brighter
+    ["#434C5E"] = "#D8DEE9", -- polar_night.brighter -> snow_storm.origin
+    ["#4C566A"] = "#D8DEE9", -- polar_night.brightest -> snow_storm.origin
+
+    -- Snow Storm to Polar Night
+    ["#D8DEE9"] = "#434C5E", -- snow_storm.origin -> polar_night.brighter
+    ["#E5E9F0"] = "#3B4252", -- snow_storm.brighter -> polar_night.bright
+    ["#ECEFF4"] = "#2E3440", -- snow_storm.brightest -> polar_night.origin
+  }
+
+  if inverted.fg and color_map[inverted.fg] then
+    inverted.fg = color_map[inverted.fg]
+  end
+  if inverted.bg and color_map[inverted.bg] then
+    inverted.bg = color_map[inverted.bg]
+  end
+
+  return inverted
 end
 
 return colors

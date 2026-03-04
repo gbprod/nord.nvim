@@ -32,6 +32,19 @@ nord.inactive = {
   c = { fg = c.snow_storm.origin, bg = c.polar_night.bright },
 }
 
+-- Apply light theme adjustments
+if require("nord.config").options.style == "light" then
+  for _, mode in pairs(nord) do
+    for _, highlight in pairs(mode) do
+      if highlight.fg and highlight.bg then
+        local temp = highlight.fg
+        highlight.fg = highlight.bg
+        highlight.bg = temp
+      end
+    end
+  end
+end
+
 if config.lualine_bold then
   for _, mode in pairs(nord) do
     mode.a.gui = "bold"
