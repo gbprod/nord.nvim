@@ -1,34 +1,45 @@
 local config = require("nord.config")
 local utils = require("nord.utils")
+local colors = require("nord.colors")
+local terminal = require("nord.terminal")
 
 local nord = {}
 
 function nord.load(opts)
   if opts then
-    require("nord.config").extend(opts)
+    config.extend(opts)
   end
 
   vim.o.termguicolors = true
 
   if config.options.colorblind.enable then
-    require("nord.colors").daltonize(config.options.colorblind.severity)
+    colors.daltonize(config.options.colorblind.severity)
   end
 
-  require("nord.colors").apply_style()
-  require("nord.config").options.on_colors(require("nord.colors").palette)
+  colors.apply_style()
+  config.options.on_colors(colors.palette)
 
-  vim.cmd([[ highlight clear ]])
+  -- Silence lualine's ColorScheme/OptionSet autocmds while we apply the theme,
+  -- so intermediate events (highlight clear, background change) don't trigger
+  -- a premature lualine reload with stale highlights.
+  vim.cmd([[augroup lualine | exe "autocmd!" | augroup END]])
+
+  -- Set background before highlight clear so Neovim resets to the correct
+  -- base defaults (light or dark) and downstream plugins know the variant.
+  vim.o.background = config.options.style == "light" and "light" or "dark"
+
+  vim.cmd([[highlight clear]])
 
   if config.options.terminal_colors then
-    require("nord.terminal").apply()
-    require("nord.terminal").apply_light_adjustments()
+    terminal.apply()
+    terminal.apply_light_adjustments()
   end
 
   utils.load(
     utils.apply_light_mode(require("nord.defaults").highlights()),
     utils.apply_light_mode(require("nord.lsp").highlights()),
     utils.apply_light_mode(require("nord.syntax").highlights()),
-    utils.apply_light_mode(require("nord.terminal").highlights()),
+    utils.apply_light_mode(terminal.highlights()),
     utils.apply_light_mode(require("nord.treesitter").highlights()),
     utils.apply_light_mode(require("nord.plugins.bufferline").highlights()),
     utils.apply_light_mode(require("nord.plugins.completion").highlights()),
@@ -49,8 +60,18 @@ function nord.load(opts)
     utils.apply_light_mode(require("nord.plugins.render-markdown").highlights())
   )
 
-  local style = config.options.style == "light" and "-light" or ""
-  vim.g.colors_name = "nord" .. style
+  -- Always "nord" so lualine's auto theme resolves to lualine/themes/nord.lua.
+  vim.g.colors_name = "nord"
+
+  -- Re-register lualine's ColorScheme/OptionSet autocmds (cleared above) and
+  -- reload its theme once all highlights are in place. Deferred so plugins
+  -- like Snacks that lualine may reference are guaranteed to be loaded.
+  vim.schedule(function()
+    local ok, lualine = pcall(require, "lualine")
+    if ok and lualine.get_config then
+      lualine.setup(lualine.get_config())
+    end
+  end)
 end
 
 nord.setup = config.setup

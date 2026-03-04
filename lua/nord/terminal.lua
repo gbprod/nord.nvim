@@ -1,7 +1,6 @@
 local terminal = {}
 
 local c = require("nord.colors").palette
-local light_c = require("nord.colors").light_palette
 
 function terminal.apply()
   -- dark
@@ -33,12 +32,17 @@ function terminal.apply()
 end
 
 function terminal.apply_light_adjustments()
-  if require("nord.config").options.style == "light" then
-    vim.g.terminal_color_0 = light_c.snow_storm.origin
-    vim.g.terminal_color_8 = light_c.snow_storm.brighter
-    vim.g.terminal_color_7 = light_c.polar_night.bright
-    vim.g.terminal_color_15 = light_c.polar_night.origin
+  if require("nord.config").options.style ~= "light" then
+    return
   end
+
+  -- In light mode swap the dark/light terminal base colors using light_palette,
+  -- which is the semantic inverse of the dark palette.
+  local light_c = require("nord.colors").light_palette
+  vim.g.terminal_color_0 = light_c.snow_storm.origin    -- dark terminal bg -> light text
+  vim.g.terminal_color_8 = light_c.snow_storm.brighter
+  vim.g.terminal_color_7 = light_c.polar_night.bright   -- light terminal bg -> dark bg
+  vim.g.terminal_color_15 = light_c.polar_night.origin
 end
 
 function terminal.highlights()

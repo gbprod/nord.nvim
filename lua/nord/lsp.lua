@@ -5,6 +5,15 @@ local c = require("nord.colors").palette
 local light_c = require("nord.colors").light_palette
 
 function lsp.highlights()
+  local is_light = require("nord.config").options.style == "light"
+
+  local function vtext(color, light_color)
+    if is_light then
+      return { bg = c.none, fg = light_color }
+    end
+    return { bg = utils.darken(color, 0.1), fg = color }
+  end
+
   return {
     -- LspReferenceText = { bg = c.fg_gutter }, -- used for highlighting "text" references
     -- LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
@@ -16,18 +25,10 @@ function lsp.highlights()
     DiagnosticInfo = { fg = c.frost.ice }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticHint = { fg = c.frost.artic_water }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-    DiagnosticVirtualTextError = require("nord.config").options.style == "light"
-      and { bg = c.none, fg = light_c.aurora.red }
-      or { bg = utils.darken(c.aurora.red, 0.1), fg = c.aurora.red }, -- Used for "Error" diagnostic virtual text
-    DiagnosticVirtualTextWarn = require("nord.config").options.style == "light"
-      and { bg = c.none, fg = light_c.aurora.yellow }
-      or { bg = utils.darken(c.aurora.yellow, 0.1), fg = c.aurora.yellow }, -- Used for "Warning" diagnostic virtual text
-    DiagnosticVirtualTextInfo = require("nord.config").options.style == "light"
-      and { bg = c.none, fg = light_c.frost.ice }
-      or { bg = utils.darken(c.frost.ice, 0.1), fg = c.frost.ice }, -- Used for "Information" diagnostic virtual text
-    DiagnosticVirtualTextHint = require("nord.config").options.style == "light"
-      and { bg = c.none, fg = light_c.frost.artic_water }
-      or { bg = utils.darken(c.frost.artic_water, 0.1), fg = c.frost.artic_water }, -- Used for "Hint" diagnostic virtual text
+    DiagnosticVirtualTextError = vtext(c.aurora.red, light_c.aurora.red), -- Used for "Error" diagnostic virtual text
+    DiagnosticVirtualTextWarn = vtext(c.aurora.yellow, light_c.aurora.yellow), -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextInfo = vtext(c.frost.ice, light_c.frost.ice), -- Used for "Information" diagnostic virtual text
+    DiagnosticVirtualTextHint = vtext(c.frost.artic_water, light_c.frost.artic_water), -- Used for "Hint" diagnostic virtual text
 
     DiagnosticUnderlineError = { undercurl = true, sp = c.aurora.red }, -- Used to underline "Error" diagnostics
     DiagnosticUnderlineWarn = { undercurl = true, sp = c.aurora.yellow }, -- Used to underline "Warning" diagnostics

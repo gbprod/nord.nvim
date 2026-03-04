@@ -1,54 +1,50 @@
-local c = require("nord.colors").palette
-local utils = require("nord.utils")
-local config = require("nord.config").options.styles
+local function get_colors()
+  local colors = require("nord.colors")
+  local config = require("nord.config")
+  return config.options.style == "light" and colors.light_palette or colors.palette
+end
 
-local nord = {}
+local function get_theme()
+  local c = get_colors()
+  local config = require("nord.config")
 
-nord.normal = {
-  a = { fg = c.polar_night.bright, bg = c.frost.ice },
-  b = { fg = c.snow_storm.brighter, bg = c.polar_night.bright },
-  c = { fg = c.snow_storm.brighter, bg = c.polar_night.brighter },
-}
+  local nord = {}
 
-nord.insert = {
-  a = { fg = c.polar_night.bright, bg = c.snow_storm.origin },
-}
+  nord.normal = {
+    a = { fg = c.polar_night.bright, bg = c.frost.ice },
+    b = { fg = c.snow_storm.brighter, bg = c.polar_night.bright },
+    c = { fg = c.snow_storm.brighter, bg = c.polar_night.brighter },
+  }
 
-nord.visual = {
-  a = { fg = c.polar_night.bright, bg = c.frost.polar_water },
-}
+  nord.insert = {
+    a = { fg = c.polar_night.bright, bg = c.snow_storm.origin },
+  }
 
-nord.replace = {
-  a = { fg = c.polar_night.bright, bg = c.aurora.yellow },
-}
+  nord.visual = {
+    a = { fg = c.polar_night.bright, bg = c.frost.polar_water },
+  }
 
-nord.command = {
-  a = { fg = c.polar_night.bright, bg = c.aurora.purple },
-}
+  nord.replace = {
+    a = { fg = c.polar_night.bright, bg = c.aurora.yellow },
+  }
 
-nord.inactive = {
-  a = { fg = c.snow_storm.origin, bg = utils.make_global_bg() },
-  b = { fg = c.snow_storm.origin, bg = utils.make_global_bg() },
-  c = { fg = c.snow_storm.origin, bg = c.polar_night.bright },
-}
+  nord.command = {
+    a = { fg = c.polar_night.bright, bg = c.aurora.purple },
+  }
 
--- Apply light theme adjustments
-if require("nord.config").options.style == "light" then
-  for _, mode in pairs(nord) do
-    for _, highlight in pairs(mode) do
-      if highlight.fg and highlight.bg then
-        local temp = highlight.fg
-        highlight.fg = highlight.bg
-        highlight.bg = temp
-      end
+  nord.inactive = {
+    a = { fg = c.snow_storm.origin, bg = c.polar_night.origin },
+    b = { fg = c.snow_storm.origin, bg = c.polar_night.origin },
+    c = { fg = c.snow_storm.origin, bg = c.polar_night.bright },
+  }
+
+  if config.options.styles and config.options.styles.lualine_bold then
+    for _, mode in pairs(nord) do
+      mode.a.gui = "bold"
     end
   end
+
+  return nord
 end
 
-if config.lualine_bold then
-  for _, mode in pairs(nord) do
-    mode.a.gui = "bold"
-  end
-end
-
-return nord
+return get_theme()
