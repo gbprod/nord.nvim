@@ -28,7 +28,7 @@ function nord.load(opts)
     utils.apply_light_mode(require("nord.defaults").highlights()),
     utils.apply_light_mode(require("nord.lsp").highlights()),
     utils.apply_light_mode(require("nord.syntax").highlights()),
-    require("nord.terminal").highlights(),
+    utils.apply_light_mode(require("nord.terminal").highlights()),
     utils.apply_light_mode(require("nord.treesitter").highlights()),
     utils.apply_light_mode(require("nord.plugins.bufferline").highlights()),
     utils.apply_light_mode(require("nord.plugins.completion").highlights()),
