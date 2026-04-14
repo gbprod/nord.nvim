@@ -1,4 +1,5 @@
 *nord-nvim.txt*                                          Nord theme for Neovim
+                                 For NVIM v0.8.0    Last change: 2026 April 14
 
 ==============================================================================
 Table of Contents                                *nord-nvim-table-of-contents*
